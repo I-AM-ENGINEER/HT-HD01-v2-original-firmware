@@ -5,7 +5,8 @@
 - Vendor page: <https://www.hlktech.com/en/Product/Details/23>
 - LCSC: <https://www.lcsc.com/product-detail/C209920.html>
 - Module based on **MediaTek MT7628N**: MIPS 24KEc, 2.4 GHz 802.11b/g/n,
-  1× 10/100 Ethernet PHY/switch, UART, USB 2.0 host, GPIO, SPI.
+  1× 10/100 Ethernet PHY/switch, UART, GPIO, SPI. The HT-HD01-V2 design does
+  not expose USB from this module.
 - The fitted device reports **MT7628AN ver:1 eco:2**, 128 MB RAM and a
   32 MB W25Q256 SPI NOR. The `HLK-7628N` name is the module, not the SoC.
 - OpenWrt target: `ramips/mt76x8`; mainline Linux has MT7628AN support.
@@ -25,17 +26,20 @@
 ## SR9900 (CoreChips)
 
 - Function: USB 2.0 to 10/100 Ethernet controller.
-- Present on the PCB according to the owner. The stock boot log does **not**
-  show an SR9900 USB device; the active Ethernet interface is the MT7628
-  internal MAC/switch (`mtk_soc_eth` → `eth0`).
-- Possible roles to confirm:
-  - USB-C data path for configuration/Ethernet-over-USB;
-  - an optional second Ethernet port;
-  - an unpopulated/alternative BOM option.
+- Role on this board: **USB-Ethernet bridge**. Its Ethernet side is on MT7628
+  switch **port 2**; its USB side is the **USB-C** connector.
+- The HLK-7628N module does not expose USB on this board, so the SR9900 is the
+  only USB data path. A host PC sees the SR9900 as a USB Ethernet adapter and
+  gets a connection to the same VLAN/`eth0.1` LAN as the RJ45.
+- Stock state: switch port 0 (RJ45) is link-up 100baseT with traffic; port 2
+  (SR9900) is enabled but link-down when USB-C has no USB host. The board itself
+  does not load an SR9900 driver because the SR9900 is on the Ethernet side and
+  the external PC is the USB host.
 - Kernel modules present in the stock image include `usbnet`, `cdc_ether`,
-  `rndis_host`, `usb_storage`, `ehci_hcd`, `ohci_hcd`. No dedicated `sr9900`
-  module was observed.
-- Please add board photos and trace the USB-C/SR9900 wiring if you can.
+  `rndis_host`, `usb_storage`, `ehci_hcd`, `ohci_hcd`; these are for the board's
+  own USB host path, not for the SR9900 link.
+- Open: exact SR9900 variant/datasheet, USB-C CC/data wiring, host enumeration
+  and speed. See [`ethernet.md`](ethernet.md).
 
 ## W25Q256 (Winbond)
 

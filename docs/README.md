@@ -4,6 +4,7 @@
 |---|---|
 | [`hardware.md`](hardware.md) | board, modules, interfaces, UART, boot time |
 | [`chips.md`](chips.md) | HLK-7628N, FGH100M-H/MM6108, SR9900, W25Q256 |
+| [`ethernet.md`](ethernet.md) | RJ45 vs SR9900 switch-port mapping and evidence |
 | [`flash-layout.md`](flash-layout.md) | MTD table, offsets, sizes, uImage header |
 | [`boot-chain.md`](boot-chain.md) | U-Boot menu, timeout behaviour, kernel/rootfs |
 | [`uart-console.md`](uart-console.md) | UART wiring and TFTP-to-RAM procedure |

@@ -19,10 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-This license covers the original documentation and tools in this repository.
-The preserved firmware images, U-Boot, kernel, vendor binaries and radio
-firmware remain the property of their respective owners and are not licensed
-under the MIT License. See docs/legal-and-privacy.md.

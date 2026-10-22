@@ -24,6 +24,7 @@ lsmod
 opkg list-installed
 ip -o addr; ip route
 cat /etc/board.json /etc/config/network /etc/config/wireless
+swconfig dev switch0 show
 ```
 
 Dumps:
@@ -70,6 +71,8 @@ See [`../bootloader/uboot-analysis.md`](../bootloader/uboot-analysis.md) and
 - Kernel 5.15.167, squashfs + jffs2 overlay, mtdsplit uImage.
 - No dual-image/rollback; `r` resets only the overlay.
 - OpenWrt 23.05.5 vendor build; 413 packages; HaLow/Morse stack integrated.
+- Switch mapping: port 0 = RJ45 (up, traffic); port 2 = SR9900 USB Ethernet
+  (down without a USB host); VLAN 1 = `0 2 6t`.
 - HaLow firmware `mm6108.bin`, BCF `bcf_HD01_v2.bin`, driver 1.15.3.
 - Boot is slow: 10 s menu + ~20–23 s kernel/HaLow init.
 
@@ -96,8 +99,7 @@ The sanitized rootfs tree was produced by
 ## Open questions
 
 - FGH100M-H datasheet/pinout.
-- SR9900 role: USB-C data, USB Ethernet gadget, or alternative BOM.
+- SR9900 exact variant/datasheet and USB-C CC/data wiring.
 - Exact `ekh03v3` DTS (Morse HEAD has shared `ekh03.dtsi` + v4).
 - UART test pad/header location inside the case.
-- Whether the SR9900 is driven by a vendor kernel module absent from the
-  captured boot.
+- Confirm host-side USB Ethernet enumeration on the SR9900 port.

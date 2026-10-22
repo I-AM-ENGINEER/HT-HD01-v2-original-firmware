@@ -3,45 +3,59 @@
 ## Board
 
 **Heltec HT-HD01-V2** — a Wi-Fi HaLow dongle/gateway in an aluminium case.
-The PCB is built around three main parts reported by the owner and confirmed
-by the running system:
+The PCB is built around an **HLK-7628N** module, an **FGH100M-H** HaLow module
+and an **SR9900** USB-Ethernet bridge.
 
 ```
-                 +-----------------------------+
-   USB-C 5V ---->|  HLK-7628N (MT7628N)        |
-   RJ45   <----->|  - MIPS 24KEc, 128 MB RAM   |
-   UART0  <----->|  - 32 MB W25Q256 SPI NOR    |
-                 |  - 2.4 GHz WMAC             |
-                 |  - Ethernet switch/PHY      |
-                 |            | SDIO           |
-                 |            v                |
-                 |  FGH100M-H (MM6108 HaLow)   |
-                 |            ^                |
-                 |            | USB?           |
-                 |        SR9900 (USB Eth)     |
-                 +-----------------------------+
+                    +-------------------------------+
+   USB-C 5V  ------>|  HLK-7628N (MT7628N)          |
+   USB-C data <---->|  - MIPS 24KEc, 128 MB RAM     |
+        (SR9900)    |  - 32 MB W25Q256 SPI NOR      |
+   RJ45     <----->|  - 2.4 GHz WMAC               |
+                    |  - Ethernet switch            |
+                    |     port 0 --> RJ45           |
+                    |     port 2 --> SR9900 --> USB |
+                    |            | SDIO             |
+                    |            v                  |
+                    |  FGH100M-H (MM6108 HaLow)     |
+                    +-------------------------------+
 ```
+
+The HLK-7628N module provides Ethernet, UART and GPIO but **does not expose
+USB** on this board. The SR9900 is therefore used as the USB-Ethernet bridge:
+one MT7628 switch port goes to the SR9900's Ethernet side, and the SR9900's USB
+side is the USB-C connector.
 
 ## Main components
 
 | Component | Role | Notes |
 |---|---|---|
-| **HLK-7628N** | Main router module | Hi-Link module with MediaTek MT7628N, 2.4 GHz WMAC, Ethernet PHY/switch, UART, USB, GPIO. The fitted board has 128 MB RAM and a 32 MB W25Q256 SPI NOR. |
+| **HLK-7628N** | Main router module | Hi-Link module with MediaTek MT7628N, 2.4 GHz WMAC, Ethernet PHY/switch, UART, GPIO. The fitted board has 128 MB RAM and a 32 MB W25Q256 SPI NOR. USB is not exposed by this module/design. |
 | **FGH100M-H** | Wi-Fi HaLow radio | Driven as a **Morse Micro MM6108** over SDIO: `mmc0:0001:2`, driver `morse` 1.15.3, firmware `morse/mm6108.bin`, BCF `bcf_HD01_v2.bin`. The exact FGH100M-H datasheet is not public (help wanted). |
-| **SR9900** | USB 2.0 ↔ 10/100 Ethernet | CoreChips USB Ethernet controller. Its exact role in the stock firmware is still unconfirmed (USB-C data path / optional USB Ethernet). The captured boot has no SR9900 USB device enumerated; the active RJ45 is the MT7628 internal switch. |
+| **SR9900** | USB 2.0 ↔ 10/100 Ethernet bridge | Ethernet side on MT7628 switch **port 2**; USB side on the **USB-C** connector. Provides the USB Ethernet interface because the HLK-7628N does not expose USB. See [`ethernet.md`](ethernet.md). |
 | **W25Q256** | 32 MB SPI NOR | U-Boot, env, factory, kernel, squashfs rootfs, jffs2 overlay. |
 | **MT7628 integrated WMAC** | 2.4 GHz 802.11b/g/n | `mt76_wmac 10300000.wmac`, driver `mt7603e`/`mt76`. |
 
+## Ethernet port map
+
+| MT7628 switch port | Connected to | Notes |
+|---|---|---|
+| **0** | physical **RJ45** | link up 100baseT, carries LAN traffic |
+| **2** | **SR9900** Ethernet side | link down when USB-C has no USB host |
+| 6 | CPU (`eth0`, tagged) | VLAN 1 trunk |
+
+VLAN 1 = `0 2 6t`; both external ports are bridged into `eth0.1`. Details and
+captured evidence: [`ethernet.md`](ethernet.md).
+
 ## Interfaces
 
-- **RJ45**: 10/100 Ethernet, MT7628 internal switch, VLAN `eth0.1`
-  (ports 0 and 2, CPU port 6 tagged).
-- **USB-C**: 5 V power input. The product page describes it as power-only, but
-  the PCB also carries the SR9900 USB Ethernet controller; the data role is an
-  open question.
+- **RJ45**: 10/100 Ethernet on MT7628 switch port 0, VLAN `eth0.1`.
+- **USB-C**: 5 V power input plus the SR9900 USB-Ethernet data path
+  (switch port 2). The host sees the SR9900 as a USB Ethernet device; the board
+  itself does not load an SR9900 driver because it is on the Ethernet side.
 - **UART0**: 115200 8N1, SoC pins **GPIO12 = UART_TXD0**, **GPIO13 =
-  UART_RXD0**, GND. It enumerates as a USB serial port on the host through a 3.3 V
-  USB-TTL adapter. This is the U-Boot console.
+  UART_RXD0**, GND. It enumerates as a USB serial port on the host through a
+  3.3 V USB-TTL adapter. This is the U-Boot console.
 - **Antenna**: SMA female (HaLow). The 2.4 GHz antenna is internal/PCB.
 - **Reset**: button/pin for factory reset (hold ~10 s). The live device tree
   does not expose a `gpio-keys` node; the vendor reset is handled outside the

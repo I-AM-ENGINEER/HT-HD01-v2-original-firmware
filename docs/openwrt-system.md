@@ -36,7 +36,8 @@ The full list is `unpacked/package-list.txt`.
 - LAN: `eth0.1`, static `10.42.0.1/24`, dnsmasq DHCP/DNS.
 - WAN: DHCP (unconfigured by default).
 - HaLow: bridge `br-ahwlan`, static `192.168.100.1/24`.
-- Switch: VLAN 1 = ports 0, 2, CPU 6t.
+- Switch: VLAN 1 = ports 0, 2, CPU 6t. Port 0 = physical RJ45;
+  port 2 = SR9900 USB Ethernet (USB-C). See [`ethernet.md`](ethernet.md).
 - 2.4 GHz `radio0`: AP mode, **disabled** by default.
 - HaLow `radio1`: type `morse`, band `s1g`, channel 3, country US,
   BCF `bcf_HD01_v2.bin`; AP with SAE, SSID/key redacted in the public tree.

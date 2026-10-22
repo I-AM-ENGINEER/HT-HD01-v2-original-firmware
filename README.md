@@ -1,5 +1,7 @@
 # HT-HD01-V2 — original firmware & open hardware notes
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Reverse-engineering, firmware-preservation and open-hardware documentation for
 the **Heltec HT-HD01-V2** Wi-Fi HaLow device (Morse Micro EKH03 v3 platform).
 
@@ -21,9 +23,9 @@ the board.
 | RAM | 128 MB DDR2 |
 | Flash | 32 MB SPI NOR, Winbond **W25Q256** |
 | HaLow | **FGH100M-H** module, Morse Micro **MM6108** over SDIO |
-| USB Ethernet | **SR9900** USB 2.0 10/100 controller (role TBD) |
+| USB Ethernet | **SR9900** USB 2.0 10/100 bridge, switch port 2 ↔ USB-C (HLK-7628N does not expose USB) |
 | 2.4 GHz | integrated MT7628 WMAC (`mt76` / `mt7603e` driver) |
-| Ethernet | 1× RJ45 10/100 via the MT7628 internal switch |
+| Ethernet | 1× RJ45 10/100, MT7628 switch port 0 |
 | USB | USB-C (power; data role to be confirmed) |
 | Console | UART0, 115200 8N1 (USB-TTL; host port varies) |
 | Bootloader | Ralink/MediaTek **U-Boot 1.1.3** |
@@ -74,7 +76,7 @@ and [`docs/recovery.md`](docs/recovery.md).
 ## Open questions / help wanted
 
 - Datasheet or pinout of **FGH100M-H** (HaLow module).
-- Exact role and wiring of **SR9900** (USB-C data? USB Ethernet gadget?).
+- SR9900 exact variant/datasheet and USB-C CC/data wiring.
 - Board photos, PCB traces, chip markings.
 - Exact `ekh03v3` DTS (Morse Micro HEAD only has the shared EKH03 DTSI + v4).
 - Whether the U-Boot menu/debug UART is exposed on a test pad or header.
@@ -100,7 +102,7 @@ addresses, private keys or passwords.
 ## License
 
 The original documentation and tools in this repository are released under the
-**MIT License** (see `LICENSE`). The preserved firmware images and vendor
+**MIT License** (see `LICENSE`; vendor firmware notice in `LICENSE-FIRMWARE.md`). The preserved firmware images and vendor
 blobs remain the property of their respective owners and are provided for
 interoperability, research and preservation; see
 [`docs/legal-and-privacy.md`](docs/legal-and-privacy.md).
