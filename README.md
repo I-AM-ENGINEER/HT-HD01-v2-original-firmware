@@ -45,6 +45,10 @@ the board.
 └── tools/                 backup / extract / sanitize helpers
 ```
 
+Git stores the `rootfs/` symlinks as mode `120000`. On Windows they are
+checked out as small text files containing the target path; use WSL/Linux
+for a functional symlink tree.
+
 ## Quick start
 
 ```bash
