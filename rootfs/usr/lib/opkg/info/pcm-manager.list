@@ -1,0 +1,13 @@
+/etc/amx/pcm-manager/PersistentConfiguration-config.odl
+/etc/rc.d/K17pcm-manager
+/usr/lib/amx/pcm-manager/modules/mod-pcm-xml.so
+/etc/amx/pcm-manager/PersistentConfiguration-definition.odl
+/etc/rc.d/S17pcm-manager
+/etc/init.d/pcm-manager
+/usr/lib/amx/pcm-manager/modules/mod-pcm-json.so
+/etc/amx/pcm-manager/PersistentConfiguration-service.odl
+/usr/lib/amx/pcm-manager/pcm-manager.so
+/etc/amx/pcm-manager/pcm-manager_caps.odl
+/etc/amx/pcm-manager/pcm-manager.odl
+/etc/amx/pcm-manager/PersistentConfiguration-schema.odl
+/usr/bin/pcm-manager

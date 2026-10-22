@@ -1,0 +1,15 @@
+Package: log4cplus
+Version: 2.0.8-2
+Depends: libc, libstdcpp6
+Source: feeds/packages/libs/log4cplus
+SourceName: log4cplus
+License: BSD-2-Clause Apache-2.0
+LicenseFiles: LICENSE
+Section: libs
+SourceDateEpoch: 1682110018
+Maintainer: BangLang Huang <banglang.huang@foxmail.com>, Rosy Song <rosysong@rosinson.com>
+Architecture: mipsel_24kc
+Installed-Size: 341375
+Description:  log4cplus is a simple to use C++11 logging API providing thread--safe,
+ flexible, and arbitrarily granular control over log management and
+ configuration. It is modeled after the Java log4j API.

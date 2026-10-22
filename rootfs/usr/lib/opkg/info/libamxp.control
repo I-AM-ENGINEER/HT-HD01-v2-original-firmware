@@ -1,0 +1,13 @@
+Package: libamxp
+Version: v1.3.1-1
+Depends: libc, libamxc
+Source: feeds/prpl/ambiorix/libs/libamxp
+SourceName: libamxp
+License: BSD-2-Clause-Patent
+LicenseFiles: LICENSE
+Section: opt
+SourceDateEpoch: 1740893805
+Maintainer: Soft At Home <support.opensource@softathome.com>
+Architecture: mipsel_24kc
+Installed-Size: 34834
+Description:  Common patterns implementation

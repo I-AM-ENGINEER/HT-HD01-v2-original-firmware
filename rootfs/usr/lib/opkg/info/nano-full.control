@@ -1,0 +1,27 @@
+Package: nano-full
+Version: 8.2-1
+Depends: libc, libncurses6
+Source: feeds/packages/utils/nano
+SourceName: nano-full
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+Section: utils
+SourceDateEpoch: 1725556643
+CPE-ID: cpe:/a:gnu:nano
+Maintainer: Hannu Nyman <hannu.nyman@iki.fi>
+Architecture: mipsel_24kc
+Installed-Size: 148256
+Description:  nano-full - all features, including syntax highlighting (also uci),
+ multibuffer, Unicode/UTF-8, nanorc, some key bindings.
+ (libmagic-based file type detection is disabled)
+ 
+ Example /etc/nanorc is included. nanorc documentation at
+ https://www.nano-editor.org/dist/latest/nanorc.5.html
+ 
+ Nano is a small and simple text editor for use on the terminal.
+ 
+ Nano started as an enhanced clone of the Pico text editor.
+ Nowadays Nano wants to be a generally useful editor with sensible
+ defaults (linewise scrolling, no automatic line breaking).
+ 
+ Nano is an official GNU package.

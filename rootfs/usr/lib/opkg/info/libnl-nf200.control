@@ -1,0 +1,15 @@
+Package: libnl-nf200
+Version: 3.7.0-1
+Depends: libc, libnl-route200
+Provides: libnl-nf
+Source: feeds/base/libs/libnl
+SourceName: libnl-nf
+License: LGPL-2.1
+LicenseFiles: COPYING
+Section: libs
+SourceDateEpoch: 1699183367
+ABIVersion: 200
+CPE-ID: cpe:/a:libnl_project:libnl
+Architecture: mipsel_24kc
+Installed-Size: 25207
+Description:  Netfilter Netlink Library Functions

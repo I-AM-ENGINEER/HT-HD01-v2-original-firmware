@@ -1,0 +1,12 @@
+Package: luci-theme-morseargon
+Version: git-25.174.10932-41c5bc2
+Depends: libc, morse-mode, luci-lua-runtime
+Source: feeds/morse/luci/luci-theme-morseargon
+SourceName: luci-theme-morseargon
+License: Apache-2.0
+Section: luci
+SourceDateEpoch: 1750647732
+Maintainer: OpenWrt LuCI community
+Architecture: all
+Installed-Size: 304023
+Description:  LuCI Morse Micro Argon Theme

@@ -1,0 +1,12 @@
+Package: kmod-crypto-crc32
+Version: 5.15.167-1
+Depends: kernel (=5.15.167-1-d64df495c443d618315d239be9783145), kmod-crypto-hash
+Source: feeds/base/kernel/linux
+SourceName: kmod-crypto-crc32
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Section: kernel
+SourceDateEpoch: 1741008457
+Architecture: mipsel_24kc
+Installed-Size: 1087
+Description:  CRC32 CRC module

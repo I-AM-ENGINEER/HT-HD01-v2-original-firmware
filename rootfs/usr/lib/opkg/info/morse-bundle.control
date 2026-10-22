@@ -1,0 +1,12 @@
+Package: morse-bundle
+Version: 2
+Depends: libc, morse-boot-prints, gpiod-tools, rsync
+Source: feeds/morse/kernel/morse-bundle
+SourceName: morse-bundle
+Section: net
+SourceDateEpoch: 1750647732
+Maintainer: Morse Micro
+Architecture: mipsel_24kc
+Installed-Size: 7602
+Description:  This package contains minor config/scripts adaptations for
+ morse releases.

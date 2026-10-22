@@ -1,0 +1,2 @@
+/etc/modules.d/70-ikconfig
+/lib/modules/5.15.167/configs.ko

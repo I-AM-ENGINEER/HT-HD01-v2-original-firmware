@@ -1,0 +1,18 @@
+Package: yajl
+Version: 2.1.0-2
+Depends: libc
+Source: feeds/packages/libs/yajl
+SourceName: yajl
+License: ISC
+LicenseFiles: COPYING
+Section: libs
+SourceDateEpoch: 1720286899
+CPE-ID: cpe:/a:yajl_project:yajl
+Maintainer: Charles Southerland <charlie@stuphlabs.com>
+Architecture: mipsel_24kc
+Installed-Size: 11529
+Description:  Yet Another JSON Library. YAJL is a small event-driven (SAX-style)
+ JSON parser written in ANSI C, and a small validating JSON generator.
+ YAJL is released under the ISC license.
+ 
+ YAJL was created by Lloyd Hilaiel.

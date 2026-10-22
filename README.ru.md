@@ -22,7 +22,7 @@
 | USB Ethernet | **SR9900** (роль уточняется) |
 | 2.4 ГГц | встроенный MT7628 (`mt76`/`mt7603e`) |
 | Ethernet | 1× RJ45 через внутренний switch MT7628 |
-| Консоль | UART0, 115200 8N1, на тестовом ПК — **COM49** |
+| Консоль | UART0, 115200 8N1 (порт USB-TTL зависит от ПК) |
 | Загрузчик | Ralink/MediaTek U-Boot 1.1.3 |
 | Прошивка | OpenWrt 23.05.5, сборка вендора `r0+24271-bc42a5ccf5` |
 
@@ -30,7 +30,8 @@
 
 ```
 dumps/       полные дампы mtd0–mtd6, full-flash-32mb.bin, SHA256SUMS.txt
-unpacked/    санитизированный rootfs.tar.gz, конфиги, init.d, DTS
+rootfs/      распакованный санитизированный rootfs
+unpacked/    дополнительные материалы: live-конфиги, DTS, dmesg
 bootloader/  разбор U-Boot и строки меню
 vendor/      DTS EKH03 из Morse Micro OpenWrt и ссылки
 docs/        железо, загрузка, recovery, портирование, legal
@@ -47,7 +48,7 @@ tools/       скрипты бэкапа/распаковки/санитизац
 - `r: Reset firmware to first boot` стирает только overlay, ядро не
   восстанавливает. Dual-image/rollback нет.
 - Сырые дампы содержат ключи и пароли устройства — не выкладывайте их в
-  прод и не используйте на других платах. Санитизированный `unpacked/` не
+  прод и не используйте на других платах. Санитизированный `rootfs/` не
   является загрузочным образом.
 - Портирование rnsbox/minimal open firmware реально: MT7628N, 128 МБ RAM,
   mainline/OpenWrt ramips, но нужен UART + TFTP и учёт 32 МБ flash.

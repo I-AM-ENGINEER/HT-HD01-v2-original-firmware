@@ -1,0 +1,13 @@
+Package: amxrt
+Version: v2.1.2-1
+Depends: libc, libamxc, libamxj, libamxp, libamxd, libamxo, libamxb, libevent2-7, libcap-ng, libamxrt
+Source: feeds/prpl/ambiorix/apps/amxrt
+SourceName: amxrt
+License: BSD-2-Clause-Patent
+LicenseFiles: LICENSE
+Section: opt
+SourceDateEpoch: 1707916071
+Maintainer: Soft At Home <support.opensource@softathome.com>
+Architecture: mipsel_24kc
+Installed-Size: 1633
+Description:  Data model runtime

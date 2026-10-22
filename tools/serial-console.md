@@ -4,17 +4,17 @@
 - GPIO12 = UART_TXD0 (board TX → adapter RX).
 - GPIO13 = UART_RXD0 (board RX → adapter TX).
 - GND → GND. Do not connect VCC.
-- Test PC port: **COM49**.
+- Port: the one assigned by your adapter (e.g. `COMx` or `/dev/ttyUSB0`).
 
 ## Open the console
 
 Windows:
 
 ```powershell
-plink -serial COM49 -sercfg 115200,8,n,1
+plink -serial COMx -sercfg 115200,8,n,1
 ```
 
-PuTTY: Connection type `Serial`, line `COM49`, speed `115200`, 8 data bits,
+PuTTY: Connection type `Serial`, line `COMx` (your port), speed `115200`, 8 data bits,
 1 stop bit, no parity, no flow control.
 
 Linux:
@@ -26,7 +26,7 @@ screen /dev/ttyUSB0 115200
 ```
 
 If Windows says `Error 5: Access is denied`, close the other program using
-COM49.
+serial port.
 
 ## U-Boot menu
 
@@ -45,8 +45,8 @@ r: Reset firmware to first boot.          <- overlay only
 Serve `uImage` from a TFTP server, then:
 
 ```
-Input device IP: 192.168.88.250
-Input server IP: 192.168.88.10
+Input device IP: 192.0.2.10
+Input server IP: 192.0.2.20
 Input Linux Kernel filename: uImage
 ```
 

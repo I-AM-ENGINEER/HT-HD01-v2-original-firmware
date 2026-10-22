@@ -1,0 +1,13 @@
+Package: pcm-manager
+Version: v0.16.1-1
+Depends: libc, amxrt, libamxc, libamxd, libamxp, libamxb, libamxo, libamxm, libamxj, libsahtrace, mod-dmext, mod-pcm-svc, libxml2, libopenssl3
+Source: feeds/prpl/network/plugins/pcm-manager
+SourceName: pcm-manager
+License: BSD-2-Clause-Patent
+LicenseFiles: LICENSE
+Section: opt
+SourceDateEpoch: 1741009513
+Maintainer: Soft At Home <support.opensource@softathome.com>
+Architecture: mipsel_24kc
+Installed-Size: 27295
+Description:  Upgrade Persistent Configuration Manager

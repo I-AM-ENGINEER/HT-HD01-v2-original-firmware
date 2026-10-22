@@ -1,0 +1,13 @@
+Package: libamxc
+Version: v1.10.0-1
+Depends: libc
+Source: feeds/prpl/ambiorix/libs/libamxc
+SourceName: libamxc
+License: BSD-2-Clause-Patent
+LicenseFiles: LICENSE
+Section: opt
+SourceDateEpoch: 1707916071
+Maintainer: Soft At Home <support.opensource@softathome.com>
+Architecture: mipsel_24kc
+Installed-Size: 34209
+Description:  Libamxc is a library containing data containers, implemented in ansi C (C99).

@@ -1,0 +1,13 @@
+Package: morsecli
+Version: 1.15.3-5
+Depends: libc, kmod-morse, libnl200, libusb-1.0-0
+Provides: morsectrl
+Source: feeds/morse/utils/morsecli
+SourceName: morsecli
+License: GPLv2
+Section: utils
+SourceDateEpoch: 1750609046
+Maintainer: Morse Micro <info@morsemicro.com>
+Architecture: mipsel_24kc
+Installed-Size: 54902
+Description:  Morse Micro WIFI HaLow driver command line tool

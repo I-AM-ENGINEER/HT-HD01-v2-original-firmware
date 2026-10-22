@@ -1,0 +1,3 @@
+/www/luci-static/resources/protocol/batadv.js
+/www/luci-static/resources/protocol/batadv_hardif.js
+/www/luci-static/resources/protocol/batadv_vlan.js

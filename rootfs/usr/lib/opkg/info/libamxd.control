@@ -1,0 +1,13 @@
+Package: libamxd
+Version: v6.1.0-1
+Depends: libc, libamxc, libamxp
+Source: feeds/prpl/ambiorix/libs/libamxd
+SourceName: libamxd
+License: BSD-2-Clause-Patent
+LicenseFiles: LICENSE
+Section: opt
+SourceDateEpoch: 1707916071
+Maintainer: Soft At Home <support.opensource@softathome.com>
+Architecture: mipsel_24kc
+Installed-Size: 42476
+Description:  Data model C-API

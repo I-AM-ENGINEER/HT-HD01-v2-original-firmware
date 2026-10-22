@@ -1,0 +1,12 @@
+Package: luci-app-openvpn
+Version: git-24.331.22232-4bb8f67
+Depends: libc, luci-compat, luci-lua-runtime
+Source: feeds/luci/applications/luci-app-openvpn
+SourceName: luci-app-openvpn
+License: Apache-2.0
+Section: luci
+SourceDateEpoch: 1732601432
+Maintainer: OpenWrt LuCI community
+Architecture: all
+Installed-Size: 12081
+Description:  LuCI Support for OpenVPN

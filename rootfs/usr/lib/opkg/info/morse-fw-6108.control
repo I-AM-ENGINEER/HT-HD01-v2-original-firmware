@@ -1,0 +1,12 @@
+Package: morse-fw-6108
+Version: rel_1_15_3_2025_Apr_16-2
+Depends: libc
+Provides: morse-fw
+Source: feeds/morse/kernel/morse-fw
+SourceName: morse-fw-6108
+Section: firmware
+SourceDateEpoch: 1750609046
+Maintainer: Morse Micro <info@morsemicro.com>
+Architecture: mipsel_24kc
+Installed-Size: 244382
+Description:  Morse Micro WIFI HaLow firmware for 6108

@@ -1,0 +1,275 @@
+#!/bin/sh
+
+keeprgb="0"
+laststa="0"
+color="b"
+lastcolor="b"
+
+config_time=0
+last_target=$(uci -q get system.@system[0].target)
+
+while true
+do
+  applied=$(uci -q get system.@system[0].applied)
+  if [ "$applied" = "1" ]
+  then
+        uci set system.@system[0].applied='0'
+  	uci set system.@system[0].config='0'
+  	uci commit system
+  	sync
+#	/ht-service/rgb y
+#	/etc/init.d/network stop
+#	/morse/scripts/chipreset.sh
+	sleep 2
+#	/etc/init.d/dnsmasq restart
+	sync
+	/etc/init.d/network restart &
+	/ht-service/rgb y
+	keeprgb="0"
+  fi
+  led_mode="1"
+  keystatus=$(cat /tmp/keystatus)
+  while [ "$keystatus" = "1" ]
+  do
+    sleep 0.3
+    keystatus=$(cat /tmp/keystatus)
+  done
+  halowmode=$(uci -q get wireless.default_radio1.mode)
+  config_mode=$(uci -q get system.@system[0].config)
+  if [ "$config_mode" = "1" ]
+  then
+    halowmode="none"
+  fi
+
+  target=$(uci -q get system.@system[0].target)
+
+  if [ "$halowmode" = "mesh" ]
+  then
+    gateway=$(uci -q get mesh11sd.mesh_params.mesh_gate_announcements)
+  fi
+  
+  if [ "$halowmode" = "ap" ] && [ "$target" = "eth" ]
+  then
+    color="c"
+  elif [ "$halowmode" = "ap" ] && [ "$target" != "eth" ]
+  then
+    color="p"
+  elif [ "$halowmode" = "mesh" ] && [ "$gateway" = "1" ] && [ "$target" = "eth" ]
+  then
+    color="c"
+  elif [ "$halowmode" = "mesh" ] && [ "$gateway" = "1" ] && [ "$target" != "eth" ]
+  then
+    color="p"
+  elif [ "$target" = "eth" ]
+  then
+    color="g"
+  else
+    color="b"
+  fi
+  
+
+  #echo $color
+  if [ "$color" != "$lastcolor" ]
+  then
+    #echo $color
+    keeprgb="0"
+    lastcolor=$color
+  fi
+        
+  wlan=$(ifconfig |grep wlan|grep -v br|head -1|awk '{print $1}') 
+  wifi_ap=$(ifconfig|grep phy|grep ap|awk '{print $1}')
+  wifi_sta=$(ifconfig|grep phy|grep sta|awk '{print $1}')
+  case $halowmode in
+  "ap")
+    bridge=$(uci -q get system.@system[0].bridge)
+    dhcp=$(uci -q get network.lan.proto)
+    wifi_sta_disabled=$(uci -q get wireless.sta_radio0.disabled)
+    wifi_sta_device=$(uci -q get wireless.sta_radio0.device)
+    easymesh_sta=$(uci -q get wireless.default_bh_radio1.mode)
+    if [ "$easymesh_sta" != "" ]
+    then
+      assoc=$(iwinfo wlan-prpl-1 assoclist)
+      if [ "$assoc" != "No station connected" ]
+      then
+        led_mode="0"
+      fi
+    elif [ "$wifi_sta_device" != "" ] && [ "$wifi_sta_disabled" != "1" ] #wifi
+    then
+      wifiip=$(ifconfig $wifi_sta |grep "inet addr")
+      assoc=$(iwinfo $wifi_sta assoclist)
+      if [ "$wifiip" != "" ] && [ "$assoc" != "No station connected" ];then  led_mode="0";fi
+    elif [ "$bridge" = "1" ] #bridge
+    then
+      proto=$(uci -q get network.ahwlan.proto)
+      if [ "$proto" = "static" ]
+      then
+        led_mode="0"
+      else
+        ethip=$(ifconfig br-ahwlan |grep "inet addr")
+        eth_s=$(swconfig dev switch0 port 0 get link|grep up)
+        if [ "$ethip" != "" ] && [ "$eth_s" != "" ];then  led_mode="0";fi
+      fi
+    elif [ "$dhcp" = "dhcp" ] #eth+router
+    then
+        ethip=$(ifconfig eth0.1 |grep "inet addr")
+        eth_s=$(swconfig dev switch0 port 0 get link|grep up)
+        if [ "$ethip" != "" ] && [ "$eth_s" != "" ];then  led_mode="0";fi
+    else #none
+      led_mode="0"
+    fi
+    
+    if [ "$led_mode" = "0" ]
+    then
+      if [ "$keeprgb" != "1" ]
+      then
+        /ht-service/rgb $color
+        keeprgb="1"
+      fi
+      sleep 1
+    else
+      keeprgb="0"
+      for i in {1..5}
+      do
+        /ht-service/rgb $color
+        sleep 0.3
+        /ht-service/rgb n
+        sleep 0.3
+       done
+    fi
+  ;;
+  "sta")
+    assoc=$(iwinfo $wlan assoclist)
+    if [ "$assoc" != "No station connected" ]
+    then
+      led_mode="0"
+     fi
+     
+    if [ "$led_mode" = "0" ]
+    then
+      if [ "$keeprgb" != "1" ]
+      then
+        /ht-service/rgb $color
+        keeprgb="1"
+      fi
+      sleep 1
+    else
+      keeprgb="0"
+      for i in {1..5}
+      do
+        /ht-service/rgb $color
+        sleep 0.3
+        /ht-service/rgb n
+        sleep 0.3
+       done
+    fi
+  ;;
+  "mesh")
+    gateway=$(uci -q get mesh11sd.mesh_params.mesh_gate_announcements)
+    if [ "$gateway" = "1" ]
+    then
+      bridge=$(uci -q get system.@system[0].bridge)
+      dhcp=$(uci -q get network.lan.proto)
+      wifi_sta_disabled=$(uci -q get wireless.sta_radio0.disabled)
+      wifi_sta_device=$(uci -q get wireless.sta_radio0.device)
+      if [ "$wifi_sta_device" != "" ] && [ "$wifi_sta_disabled" != "1" ] #wifi
+      then
+        wifiip=$(ifconfig $wifi_sta |grep "inet addr")
+        assoc=$(iwinfo $wifi_sta assoclist)
+        if [ "$wifiip" != "" ] && [ "$assoc" != "No station connected" ];then  led_mode="0";fi
+      elif [ "$bridge" = "1" ] #bridge
+      then
+        proto=$(uci -q get network.ahwlan.proto)
+        if [ "$proto" = "static" ]
+        then
+          led_mode="0"
+        else
+          ethip=$(ifconfig br-ahwlan |grep "inet addr")
+          eth_s=$(swconfig dev switch0 port 0 get link|grep up)
+          if [ "$ethip" != "" ] && [ "$eth_s" != "" ];then  led_mode="0";fi
+        fi
+      elif [ "$dhcp" = "dhcp" ] #ap eth+router or easymesh controller
+      then
+        halowip=$(ifconfig br-ahwlan |grep "inet addr")
+        #ethip=$(ifconfig br-lan |grep "inet addr")
+        ethip=$(ifconfig eth0.1 |grep "inet addr")
+        eth_s=$(swconfig dev switch0 port 0 get link|grep up)
+        if [ "$halowip" != "" ] && [ "$ethip" != "" ] && [ "$eth_s" != "" ];then  led_mode="0";fi
+      else #none
+        led_mode="0"
+      fi
+    else
+      connect_number=$(iwinfo $wlan assoclist|grep ago|wc -l)
+      n=0;
+      for i in `seq 1 $connect_number`;
+      do
+        assoctime=$(iwinfo $wlan assoclist|grep ago|head -$i|tail -1|awk '{print $(NF-2)}')
+        if [ $assoctime -lt 5000 ];then  n=`expr $n + 1`;fi
+      done
+      if [ "$connect_number" = "$n" ] && [ "$connect_number" != "0" ]
+      then
+        led_mode="0"
+      fi
+    fi
+ 
+    if [ "$led_mode" = "0" ]
+    then
+      if [ "$keeprgb" != "1" ]
+      then
+        /ht-service/rgb $color
+        keeprgb="1"
+      fi
+      sleep 1
+    else
+      keeprgb="0"
+      for i in {1..5}
+      do
+        /ht-service/rgb $color
+        sleep 0.3
+        /ht-service/rgb n
+        sleep 0.3
+       done
+    fi
+  ;;
+  "none")
+    target=$(uci -q get system.@system[0].target)
+    if [ "$target" = "eth" ]
+    then
+    color="g"
+    else
+    color="b"
+    fi
+    /ht-service/rgb y
+    sleep 0.5
+    res=$(ifconfig |grep phy0-ap0)
+    if [ "$res" != "" ]
+    then
+    	wlan0_s=$(iwinfo phy0-ap0 info|grep "ESSID")
+    else
+    	wlan0_s=""
+    fi
+    
+    if [ "$wlan0_s" != "" ]
+    then
+          /ht-service/rgb $color
+          sleep 0.5
+          config_time=0
+    elif [ "$config_time" = "35" ]
+    then
+          config_time=0
+          /etc/init.d/network restart
+    else
+         config_time=`expr $config_time + 1`
+    fi
+  ;;
+  esac
+  
+  last_target=$target
+done
+
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+import "mod-pcm-svc.so" as "mod_pcm";
+
+%config {
+    %global ubus = {
+        register-on-start-event = true
+    };
+}
+
+
+%define {
+    entry-point mod_pcm.main;
+}

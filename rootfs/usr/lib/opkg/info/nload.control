@@ -1,0 +1,13 @@
+Package: nload
+Version: 0.7.4-1
+Depends: libc, libncurses6, libstdcpp6
+Source: feeds/packages/admin/nload
+SourceName: nload
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Section: admin
+SourceDateEpoch: 1682110018
+Maintainer: Jacky Guo <leickwell@hotmail.com>
+Architecture: mipsel_24kc
+Installed-Size: 32505
+Description:  Monitors network traffic and bandwidth usage.

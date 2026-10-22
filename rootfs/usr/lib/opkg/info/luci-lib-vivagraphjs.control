@@ -1,0 +1,11 @@
+Package: luci-lib-vivagraphjs
+Version: git-24.278.15456-2a8782b
+Depends: libc
+Source: feeds/morse/luci/luci-lib-vivagraphjs
+SourceName: luci-lib-vivagraphjs
+Section: luci
+SourceDateEpoch: 1728015456
+Maintainer: Morse Micro
+Architecture: all
+Installed-Size: 21517
+Description:  minified VivaGraphJS javascript library

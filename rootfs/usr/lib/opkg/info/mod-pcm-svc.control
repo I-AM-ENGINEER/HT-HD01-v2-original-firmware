@@ -1,0 +1,13 @@
+Package: mod-pcm-svc
+Version: v0.9.0-1
+Depends: libc, amxrt, libamxc, libamxd, libamxp, libamxb, libamxo, libamxm, libamxj, libsahtrace
+Source: feeds/prpl/network/mods/mod-pcm-svc
+SourceName: mod-pcm-svc
+License: BSD-2-Clause-Patent
+LicenseFiles: LICENSE
+Section: opt
+SourceDateEpoch: 1707916074
+Maintainer: Soft At Home <support.opensource@softathome.com>
+Architecture: mipsel_24kc
+Installed-Size: 18106
+Description:  Upgrade Persistent Configuration Manager service module

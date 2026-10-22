@@ -1,0 +1,11 @@
+Package: prplmesh
+Version: 1.15.3-1
+Depends: libc, libstdcpp6, libpthread, librt, libjson-c5, libopenssl3, libnl200, uci, ubus, ubox, ebtables, wpa_supplicant_s1g, hostapd_s1g, libwpa_client_s1g, libamxb, libamxc, libamxd, libamxo, libamxp, mod-amxb-ubus, libamxb, libamxrt, mod-pcm-svc, pcm-manager, mod-amxb-ubus
+Source: feeds/prpl/prplmesh
+SourceName: prplmesh
+Section: net
+SourceDateEpoch: 1750338592
+Maintainer: prplfoundation
+Architecture: mipsel_24kc
+Installed-Size: 3869475
+Description:  prplmesh

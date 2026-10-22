@@ -1,0 +1,16 @@
+Package: gst1-mod-rtp
+Version: 1.20.5-1
+Depends: libc, libgstreamer1, libgst1pbutils, libgst1audio, libgst1rtp, libgst1tag, libgst1pbutils, libgst1video
+Source: feeds/packages/multimedia/gst1-plugins-good
+SourceName: gst1-mod-rtp
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+Section: multimedia
+SourceDateEpoch: 1677379420
+CPE-ID: cpe:/a:gstreamer:good_plug-ins
+Maintainer: W. Michael Petullo <mike@flyn.org> Ted Hess <thess@kitschensync.net>
+Architecture: mipsel_24kc
+Installed-Size: 142010
+Description:  GStreamer open source multimedia framework
+ .
+ This package contains the GStreamer RTP plugin.

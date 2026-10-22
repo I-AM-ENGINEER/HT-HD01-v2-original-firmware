@@ -1,0 +1,13 @@
+Package: libamxs
+Version: v0.4.8-1
+Depends: libc, libamxc, libamxp, libamxb, libamxd
+Source: feeds/prpl/ambiorix/libs/libamxs
+SourceName: libamxs
+License: BSD-2-Clause-Patent
+LicenseFiles: LICENSE
+Section: opt
+SourceDateEpoch: 1707916071
+Maintainer: Soft At Home <support.opensource@softathome.com>
+Architecture: mipsel_24kc
+Installed-Size: 10563
+Description:  Data model synchronization C-API

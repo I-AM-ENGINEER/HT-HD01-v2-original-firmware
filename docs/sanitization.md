@@ -28,7 +28,7 @@ and analysis.
 
 ## What is still inside
 
-- The sanitized `rootfs.tar.gz` is not byte-identical to the device and is not
+- The sanitized `rootfs/` tree is not byte-identical to the device and is not
   bootable.
 - Binaries may still contain the vendor default password string or other
   non-unique constants. That is not a device-unique secret.
@@ -41,5 +41,5 @@ and analysis.
 tools/sanitize-rootfs.sh /path/to/extracted/rootfs .
 ```
 
-The script preserves symlinks, writes `unpacked/rootfs.tar.gz`,
-`unpacked/configs/`, `unpacked/init.d/` and `unpacked/rootfs-tree.txt`.
+The script preserves symlinks and writes `rootfs/`,
+`unpacked/rootfs-tree.txt`.

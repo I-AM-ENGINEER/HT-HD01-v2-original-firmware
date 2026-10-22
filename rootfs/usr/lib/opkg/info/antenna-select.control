@@ -1,0 +1,11 @@
+Package: antenna-select
+Version: 1
+Depends: libc, kmod-mtd-rw
+Source: feeds/morse/utils/antenna-select
+SourceName: antenna-select
+Section: Utilities
+SourceDateEpoch: 1750596515
+Maintainer: Morse Micro <info@morsemicro.com>
+Architecture: mipsel_24kc
+Installed-Size: 774
+Description:  VoCore2 Antenna Selector script (defaults 2nd antenna)

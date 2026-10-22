@@ -1,0 +1,11 @@
+Package: morse-button
+Version: 1
+Depends: libc, netifd-morse
+Source: feeds/morse/utils/morse-button
+SourceName: morse-button
+Section: utils
+SourceDateEpoch: 1750647732
+Maintainer: Morse Micro
+Architecture: mipsel_24kc
+Installed-Size: 466
+Description:  Add a button handler script for morse devices.

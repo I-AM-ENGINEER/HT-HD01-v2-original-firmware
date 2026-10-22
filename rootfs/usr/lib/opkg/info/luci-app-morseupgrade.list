@@ -1,0 +1,7 @@
+/usr/share/rpcd/acl.d/luci-app-morseupgrade.json
+/www/luci-static/resources/view/morse/css/upgrade.css
+/usr/libexec/rpcd/morseupgrade
+/usr/share/luci/menu.d/luci-app-morseupgrade.json
+/etc/config/upgrade
+/etc/uci-defaults/50-upgrade
+/www/luci-static/resources/view/morse/upgrade.js

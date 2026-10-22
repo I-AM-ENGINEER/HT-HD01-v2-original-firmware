@@ -1,0 +1,43 @@
+{
+    "admin/help/": {
+        "title": "Help",
+        "order": 998,
+
+        "action": {
+            "type": "firstchild"
+        }
+    },
+
+    "admin/help/regulatoryinfo": {
+        "title": "Regulatory Information",
+        "order": 2,
+        "action": {
+            "type": "view",
+            "path": "morse/morseregulatoryinfo"
+        },
+        "depends": {
+            "acl": [ "luci-app-morseconfig" ]
+        }
+    },
+
+    "admin/statistics": {
+        "title": "Statistics",
+        "order": 80,
+
+        "action": {
+            "type": "firstchild"
+        }
+    },
+
+
+    "admin/config": {
+        "title": "Quick Config",
+        "order": 5,
+        "action": {
+            "type": "view",
+            "path": "morse/config"
+        }
+    }
+
+}
+

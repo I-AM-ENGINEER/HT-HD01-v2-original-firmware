@@ -1,0 +1,16 @@
+/morse/banners/sta-easymesh.txt
+/morse/banners/mesh-extender.txt
+/morse/banners/adhoc.txt
+/morse/banners/sta-matter.txt
+/morse/banners/monitor.txt
+/morse/banners/sta.txt
+/morse/banners/none.txt
+/morse/scripts/morse-mode-print.sh
+/morse/banners/mesh.txt
+/morse/banners/mesh-router.txt
+/morse/banners/ap-router.txt
+/etc/init.d/morse-boot-prints
+/morse/banners/ap.txt
+/morse/banners/sta-extender.txt
+/morse/banners/ap-easymesh.txt
+/morse/banners/mesh-gate.txt

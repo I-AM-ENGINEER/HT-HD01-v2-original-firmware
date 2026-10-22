@@ -1,0 +1,11 @@
+Package: morse-mode
+Version: 1
+Depends: libc, netifd-morse, morse-regdb
+Source: feeds/morse/utils/morse-mode
+SourceName: morse-mode
+Section: Utilities
+SourceDateEpoch: 1750596515
+Maintainer: Morse Micro
+Architecture: mipsel_24kc
+Installed-Size: 2078
+Description:  Access morse mode info via ubus

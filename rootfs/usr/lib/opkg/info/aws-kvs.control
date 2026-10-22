@@ -1,0 +1,11 @@
+Package: aws-kvs
+Version: 3.4.1
+Depends: libc, libopenssl3, libcurl4, log4cplus, libgstreamer1, libgst1app, gst1-mod-videoparsersbad, gstreamer1-utils, gst1-mod-rtpmanager, gst1-mod-udp, gstreamer1-plugins-base, gst1-mod-rtsp, gst1-mod-rtp
+Source: feeds/morse/multimedia/aws-kvs
+SourceName: aws-kvs
+Section: multimedia
+SourceDateEpoch: 1728015456
+Maintainer: Morse Micro <info@morsemicro.com>
+Architecture: mipsel_24kc
+Installed-Size: 196747
+Description:  Amazon Kinesis Video Streams provides a service that publishes a video stream to AWS Kinesis Video Streams using the gstreamer plugins

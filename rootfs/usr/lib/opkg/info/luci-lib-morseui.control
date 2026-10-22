@@ -1,0 +1,12 @@
+Package: luci-lib-morseui
+Version: git-25.174.10932-e611ea6
+Depends: libc, luci-base
+Source: feeds/morse/luci/luci-lib-morseui
+SourceName: luci-lib-morseui
+License: Apache-2.0
+Section: luci
+SourceDateEpoch: 1750647732
+Maintainer: OpenWrt LuCI community
+Architecture: all
+Installed-Size: 5968
+Description:  LuCI Morse UI Library

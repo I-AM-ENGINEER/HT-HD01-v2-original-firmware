@@ -1,0 +1,12 @@
+Package: morse-copy-coredump
+Version: 1
+Depends: libc, kmod-morse
+Source: feeds/morse/kernel/morse-copy-coredump
+SourceName: morse-copy-coredump
+Section: net
+SourceDateEpoch: 1728015456
+Maintainer: Morse Micro
+Architecture: mipsel_24kc
+Installed-Size: 761
+Description:  Copy morse driver coredumps from sysfs to /var/log
+ when they appear (detected via hotplug).

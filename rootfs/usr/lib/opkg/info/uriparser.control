@@ -1,0 +1,12 @@
+Package: uriparser
+Version: 0.9.3-1
+Depends: libc
+Source: feeds/prpl/ambiorix/libs/uriparser
+SourceName: uriparser
+License: BSD-3-Clause
+LicenseFiles: COPYING
+Section: libs
+SourceDateEpoch: 1707916040
+Architecture: mipsel_24kc
+Installed-Size: 23004
+Description:  Uriparser is a strictly RFC 3986 compliant URI parsing and handling library written in C89 ("ANSI C"). Uriparser is cross-platform, fast, supports Unicode, and is licensed under the New BSD license.

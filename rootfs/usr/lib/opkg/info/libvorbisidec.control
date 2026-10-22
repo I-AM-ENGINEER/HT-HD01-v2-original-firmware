@@ -1,0 +1,15 @@
+Package: libvorbisidec
+Version: 1.0.3-20180319-2
+Depends: libc, libogg0
+Source: feeds/packages/libs/libvorbisidec
+SourceName: libvorbisidec
+License: BSD-3-Clause
+LicenseFiles: COPYING
+Section: libs
+SourceDateEpoch: 1684395093
+Maintainer: Ted Hess <thess@kitschensync.net>
+Architecture: mipsel_24kc
+Installed-Size: 74386
+Description:  libvorbisidec is "tremor", a fixed-point implementation of libvorbis.
+ It is suitable as a replacement for libvorbis in tremor-aware applications.
+ Tremor is a decoder only.

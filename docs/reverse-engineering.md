@@ -2,7 +2,7 @@
 
 ## Access
 
-- UART0: 115200 8N1, USB-TTL on COM49 (test PC). U-Boot menu and Linux console.
+- UART0: 115200 8N1, USB-TTL serial console. U-Boot menu and Linux console.
 - SSH: `root@<device>`; the vendor default password is redacted here.
 - LuCI: `http://<device>/` (default LAN `10.42.0.1`).
 
@@ -89,7 +89,7 @@ strings -t x dumps/mtd0-u-boot.bin | grep -iE 'TFTP|Flash|Reset|IP|kernel'
 xxd -l 64 dumps/mtd4-kernel.bin
 ```
 
-The sanitized rootfs archive was produced by
+The sanitized rootfs tree was produced by
 [`../tools/sanitize-rootfs.sh`](../tools/sanitize-rootfs.sh); see
 [`sanitization.md`](sanitization.md).
 

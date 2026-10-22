@@ -1,0 +1,11 @@
+Package: luci-proto-relay
+Version: git-19.307.61018-284918b
+Depends: libc, relayd
+Source: feeds/luci/protocols/luci-proto-relay
+SourceName: luci-proto-relay
+Section: luci
+SourceDateEpoch: 1572800218
+Maintainer: OpenWrt LuCI community
+Architecture: all
+Installed-Size: 1606
+Description:  Support for relayd pseudo bridges

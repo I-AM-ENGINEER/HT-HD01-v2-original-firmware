@@ -1,0 +1,69 @@
+/**
+ * Persistent Configuration Manager Config data model
+ *
+ * @version 1.0
+ */
+
+%define {
+    select 'PersistentConfiguration' {
+        /**
+         * Persistent Configuration Manager's own configuration
+         *
+         * @version 1.0
+         */
+        %persistent object Config {
+            /**
+             * Store security Related Configuration for encrypting,
+             * decrypting the user settings file.
+             *
+             * @version 1.0
+             */
+            %persistent object Security {
+                /**
+                 * Flag to determine whether the user settings file
+                 * needs to be encrypted
+                 *
+                 * @version 1.0
+                 */
+                %persistent bool EncryptUserFile{
+                    userflags %upc;
+                    default false;
+                }
+
+                /**
+                 * Defines the key that used for the encrypting/decrypting. The value should be in base64.   
+                 *
+                 * @version 1.0
+                 */
+                %persistent string EncryptKey{
+                    default "ZmFrZV9wcml2YXRlX2tleQ==";
+                    on action read call hide_value;
+                }
+            }
+            /**
+             * Control of auto synchronization logic.
+             * If Enabled all plugins with config item `AutoSync` == true will
+             * notify when flagged parameters will be change.
+             * When configured to ForceEnable `AutoSync` config item is ignored and
+             * notification is launched for all plugins.
+             *
+             * @version 1.0
+             */
+            %persistent string AutoSync {
+                on action validate call check_enum ["Disable", "Enable", "ForceEnable"];
+                userflags %upc;
+                default "Disable";
+            }
+            /**
+             * Defines the type of the backup files.
+             * Choose between JSON and XML. The default filetype is JSON
+             *
+             * @version 1.0
+             */
+            %persistent string BackupFileType {
+                on action validate call check_enum ["JSON", "XML"];
+                default "JSON";
+            }
+        }
+    }
+}

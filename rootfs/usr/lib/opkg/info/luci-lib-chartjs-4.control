@@ -1,0 +1,11 @@
+Package: luci-lib-chartjs-4
+Version: git-24.331.21575-ac122e9
+Depends: libc
+Source: feeds/luci/libs/luci-lib-chartjs-4
+SourceName: luci-lib-chartjs-4
+Section: luci
+SourceDateEpoch: 1732600775
+Maintainer: Morse Micro
+Architecture: all
+Installed-Size: 68993
+Description:  minified ChartJS 4 javascript library

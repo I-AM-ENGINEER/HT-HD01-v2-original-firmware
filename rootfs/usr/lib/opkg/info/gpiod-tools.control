@@ -1,0 +1,14 @@
+Package: gpiod-tools
+Version: 1.6.4-1
+Depends: libc, libgpiod
+Source: feeds/packages/libs/libgpiod
+SourceName: gpiod-tools
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+Section: utils
+SourceDateEpoch: 1678482093
+Maintainer: Michael Heimpold <mhei@heimpold.de>
+Architecture: mipsel_24kc
+Installed-Size: 21150
+Description:  Tools for interacting with the linux GPIO character device
+ (gpiod stands for GPIO device).

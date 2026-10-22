@@ -1,0 +1,13 @@
+Package: libiwinfo-lua
+Version: 2025-03-26-837a1f7d-1
+Depends: libc, libiwinfo20250326, liblua5.1.5
+Source: feeds/base/network/utils/iwinfo
+SourceName: libiwinfo-lua
+License: GPL-2.0
+Section: lang
+SourceDateEpoch: 1750611280
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Architecture: mipsel_24kc
+Installed-Size: 5671
+Description:  This is the Lua binding for the iwinfo library. It provides access to all enabled
+ backends.

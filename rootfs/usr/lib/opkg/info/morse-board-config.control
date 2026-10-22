@@ -1,0 +1,11 @@
+Package: morse-board-config
+Version: rel_1_15_3_2025_Apr_16-6
+Depends: libc
+Source: feeds/morse/kernel/mm-board-config
+SourceName: morse-board-config
+Section: firmware
+SourceDateEpoch: 1750609046
+Maintainer: Morse Micro <info@morsemicro.com>
+Architecture: mipsel_24kc
+Installed-Size: 3756
+Description:  Morse Micro WIFI HaLow Board Config File

@@ -1,0 +1,12 @@
+Package: mediamtx
+Version: 1.4.0-1
+Depends: libc
+Source: feeds/morse/multimedia/mediamtx
+SourceName: mediamtx
+Section: multimedia
+SourceDateEpoch: 1728015456
+Architecture: mipsel_24kc
+Installed-Size: 6639615
+Description:  Ready-to-use server and proxy that allows users to publish, read and proxy live video and audio streams through various protocols.
+ 
+ If libcamera is enabled, it will try to build its rpicamera support.

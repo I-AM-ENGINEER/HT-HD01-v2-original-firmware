@@ -1,0 +1,12 @@
+Package: luci-mod-status
+Version: git-25.141.16616-fb7dfe0
+Depends: libc, luci-base, libiwinfo20250326, rpcd-mod-iwinfo
+Source: feeds/luci/modules/luci-mod-status
+SourceName: luci-mod-status
+License: Apache-2.0
+Section: luci
+SourceDateEpoch: 1747802216
+Maintainer: OpenWrt LuCI community
+Architecture: mipsel_24kc
+Installed-Size: 40046
+Description:  LuCI Status Pages

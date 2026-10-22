@@ -1,0 +1,14 @@
+/etc/uci-defaults/31_dropbear_setup
+/etc/uci-defaults/99-ekh03-sdhci-migration
+/etc/uci-defaults/50-ttyd
+/etc/board.d/00_system
+/morse/scripts/save_dropbear_setup.sh
+/etc/uci-defaults/31_password
+/morse/scripts/mm_dumps.sh
+/etc/uci-defaults/98-morse-wireless-defaults
+/etc/sysctl.d/13-qdisc.conf
+/etc/sysctl.d/1-panic.conf
+/etc/init.d/morsechipreset
+/morse/scripts/chipreset.sh
+/morse/scripts/start_rtspserver.sh
+/morse/scripts/versions.sh

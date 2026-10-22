@@ -1,0 +1,16 @@
+Package: morse-leds
+Version: 1
+Depends: libc
+Source: feeds/morse/utils/morse-leds
+SourceName: morse-leds
+Section: utils
+SourceDateEpoch: 1750647732
+Maintainer: Morse Micro
+Architecture: mipsel_24kc
+Installed-Size: 2369
+Description:  Override default LED status handler to handle new
+ states and more complex LEDs (e.g. PWM)
+ (both for the status, and to set
+ the colour of the other LEDs since the OpenWrt LED
+ configurator doesn't know how to set the colour on
+ PWM LEDs).

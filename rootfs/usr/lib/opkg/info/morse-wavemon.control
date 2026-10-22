@@ -1,0 +1,13 @@
+Package: morse-wavemon
+Version: 0.9.5-2-2
+Depends: libc, kmod-morse, libnl200, libncurses6, nload
+Source: feeds/morse/utils/morse-wavemon
+SourceName: morse-wavemon
+License: GPL-3.0+
+LicenseFiles: LICENSE
+Section: utils
+SourceDateEpoch: 1750647732
+Maintainer: Morse Micro <info@morsemicro.com>
+Architecture: mipsel_24kc
+Installed-Size: 29892
+Description:  Morse Micro WIFI HaLow aware wavemon

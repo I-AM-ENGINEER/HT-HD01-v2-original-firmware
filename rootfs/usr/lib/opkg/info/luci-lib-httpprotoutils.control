@@ -1,0 +1,11 @@
+Package: luci-lib-httpprotoutils
+Version: git-23.024.54051-e776759
+Depends: libc, luci-lib-base, luci-lua-runtime
+Source: feeds/luci/libs/luci-lib-httpprotoutils
+SourceName: luci-lib-httpprotoutils
+Section: luci
+SourceDateEpoch: 1674572451
+Maintainer: OpenWrt LuCI community
+Architecture: all
+Installed-Size: 2560
+Description:  HTTP protocol utility functions

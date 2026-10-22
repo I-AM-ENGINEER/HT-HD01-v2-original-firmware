@@ -1,0 +1,5 @@
+/etc/init.d/trelay
+/lib/modules/5.15.167/trelay.ko
+/etc/config/trelay
+/etc/modules.d/50-trelay
+/etc/hotplug.d/net/50-trelay

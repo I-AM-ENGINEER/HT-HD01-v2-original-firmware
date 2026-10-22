@@ -1,0 +1,2 @@
+#!/bin/sh
+morsectrl  rpg stats && morsectrl  rpg stats -r

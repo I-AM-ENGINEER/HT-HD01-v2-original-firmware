@@ -1,0 +1,15 @@
+Package: iptraf-ng
+Version: 1.1.4-1
+Depends: libc, libncurses6
+Source: feeds/packages/net/iptraf-ng
+SourceName: iptraf-ng
+License: GPL-2.0
+LicenseFiles: LICENSE
+Section: net
+SourceDateEpoch: 1576961561
+Architecture: mipsel_24kc
+Installed-Size: 56940
+Description:  iptraf-ng is a console-based network statistics utility for Linux. It gathers a
+ variety of figures such as TCP connection packet and byte counts, interface
+ statistics and activity indicators, TCP/UDP traffic breakdowns, and LAN
+ station packet and byte counts.

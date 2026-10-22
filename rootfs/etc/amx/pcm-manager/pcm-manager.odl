@@ -1,0 +1,49 @@
+%config {
+    // main files
+    dm_name = "PersistentConfiguration";
+    definition_file = "${dm_name}-definition.odl";
+    backup_store_path = "/cfg/pcm";
+    user_backup_path = "/tmp/pcm.usr";
+    pcm_modules_path = "/usr/lib/amx/pcm-manager/modules";
+
+    storage-type = "odl";
+    storage-path = "${rw_data_path}/${name}";
+
+    import-dbg = false;
+    odl = {
+        load-dm-events = true,
+        dm-load = true,
+        dm-save = true,
+        dm-save-on-changed = true,
+        dm-save-delay = 1000,
+        directory = "${storage-path}/odl"
+    };
+
+    sahtrace = {
+        type = "syslog",
+        level = 200
+    };
+    trace-zones = {
+        pcm = 200,
+        pcm_json = 200,
+        pcm_xml = 200
+        };
+
+    pcm_svc_config = {
+        "Objects" = "PersistentConfiguration",
+        "Flags" = "upc,usersetting",
+        "BackupFiles" = "pcm-manager"
+    };
+}
+
+import "${name}.so" as "${name}";
+#include "mod_sahtrace.odl";
+#include "pcm-manager_caps.odl";
+
+include "${definition_file}";
+
+%define {
+    entry-point pcm-manager.pcm_main;
+}
+
+#include "mod_pcm_svc.odl";

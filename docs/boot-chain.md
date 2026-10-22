@@ -58,8 +58,8 @@ no auto-TFTP, no netconsole, no HTTP recovery, no DHCP boot.
 Use the UART console and menu option 1 with a TFTP server:
 
 ```text
-device IP:  192.168.88.250   (example)
-server IP:  192.168.88.10
+device IP:  192.0.2.10   (example)
+server IP:  192.0.2.20
 filename:   uImage
 ```
 

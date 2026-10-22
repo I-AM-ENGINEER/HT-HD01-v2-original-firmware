@@ -1,0 +1,11 @@
+Package: morse-dppd
+Version: 1.15.3-1
+Depends: libc, dppd-creds, libnl200, libnl-genl200, libopenssl3, libncurses6, libmicrohttpd-ssl, avahi-utils, libwpa_client_s1g
+Source: feeds/morse/utils/morse-dppd
+SourceName: morse-dppd
+Section: Utilities
+SourceDateEpoch: 1750609046
+Maintainer: Morse Micro
+Architecture: mipsel_24kc
+Installed-Size: 17035
+Description:  MorseMicro 802.11ah Device Provisioning Protocol Daemon

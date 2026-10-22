@@ -1,0 +1,12 @@
+Package: morsectrl
+Version: rel_1_15_3_2025_Apr_16-5
+Depends: libc, kmod-morse, libnl200, libusb-1.0-0
+Source: feeds/base/feeds/morse/morsectrl
+SourceName: morsectrl
+License: GPLv2
+Section: utils
+SourceDateEpoch: 1753504041
+Maintainer: Morse Micro
+Architecture: mipsel_24kc
+Installed-Size: 75626
+Description:  Morse Micro WIFI HaLow driver tools

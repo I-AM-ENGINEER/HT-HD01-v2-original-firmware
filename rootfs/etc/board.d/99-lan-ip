@@ -1,0 +1,10 @@
+. /lib/functions/uci-defaults.sh
+logger -t 99-lan-ip "setting custom default LAN IP"
+board_config_update
+json_select network
+json_select lan
+json_add_string ipaddr "10.42.0.1"
+json_add_string netmask "255.255.255.0"
+json_select ..
+json_select ..
+board_config_flush

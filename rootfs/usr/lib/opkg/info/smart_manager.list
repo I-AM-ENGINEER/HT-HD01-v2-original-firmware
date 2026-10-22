@@ -1,0 +1,4 @@
+/usr/share/smart_manager/dcs.mmext
+/etc/init.d/smart_manager
+/etc/uci-defaults/50-smart_manager
+/sbin/smart_manager

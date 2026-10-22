@@ -1,0 +1,16 @@
+Package: gst1-mod-typefindfunctions
+Version: 1.20.5-1
+Depends: libc, libgstreamer1, libgst1audio, libgst1pbutils, libgst1tag, libgst1video
+Source: feeds/packages/multimedia/gst1-plugins-base
+SourceName: gst1-mod-typefindfunctions
+License: LGPL-2.1-or-later GPL-2.0-or-later
+LicenseFiles: COPYING.LIB COPYING
+Section: multimedia
+SourceDateEpoch: 1677379420
+CPE-ID: cpe:/a:gstreamer:gst-plugins-base
+Maintainer: W. Michael Petullo <mike@flyn.org> Ted Hess <thess@kitschensync.net>
+Architecture: mipsel_24kc
+Installed-Size: 28149
+Description:  GStreamer open source multimedia framework
+ .
+ This package contains the GStreamer 'typefind' functions plugin.

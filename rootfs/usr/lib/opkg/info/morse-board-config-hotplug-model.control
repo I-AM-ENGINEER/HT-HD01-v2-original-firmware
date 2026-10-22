@@ -1,0 +1,13 @@
+Package: morse-board-config-hotplug-model
+Version: rel_1_15_3_2025_Apr_16-6
+Depends: libc, morse-board-config
+Source: feeds/morse/kernel/mm-board-config
+SourceName: morse-board-config-hotplug-model
+Section: firmware
+SourceDateEpoch: 1750609046
+Maintainer: Morse Micro <info@morsemicro.com>
+Architecture: mipsel_24kc
+Installed-Size: 580
+Description:  When enabled, a hotplug script will be installed to
+ append a relevant module type suffix based on the value
+ programmed into the Morse chips OTP bits.

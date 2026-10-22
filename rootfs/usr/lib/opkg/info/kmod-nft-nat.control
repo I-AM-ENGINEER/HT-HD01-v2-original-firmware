@@ -1,0 +1,12 @@
+Package: kmod-nft-nat
+Version: 5.15.167-1
+Depends: kernel (=5.15.167-1-d64df495c443d618315d239be9783145), kmod-nft-core, kmod-nf-nat
+Source: feeds/base/kernel/linux
+SourceName: kmod-nft-nat
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Section: kernel
+SourceDateEpoch: 1741008457
+Architecture: mipsel_24kc
+Installed-Size: 4466
+Description:  Netfilter nf_tables NAT support

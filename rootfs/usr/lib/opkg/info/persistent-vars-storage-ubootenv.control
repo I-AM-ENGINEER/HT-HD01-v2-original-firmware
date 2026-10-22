@@ -1,0 +1,12 @@
+Package: persistent-vars-storage-ubootenv
+Version: 1
+Depends: libc, uboot-envtools
+Provides: persistent-vars-storage
+Source: feeds/morse/utils/persistent-vars-storage-ubootenv
+SourceName: persistent-vars-storage-ubootenv
+Section: Utilities
+SourceDateEpoch: 1750647732
+Maintainer: Morse Micro
+Architecture: mipsel_24kc
+Installed-Size: 1484
+Description:  Reads or writes key-value vars from/into the persistent storage (u-boot-env)

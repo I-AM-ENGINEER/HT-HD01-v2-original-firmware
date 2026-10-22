@@ -1,0 +1,29 @@
+/**
+ * Persistent Configuration Manager Service Schema data model
+ *
+ * @version 1.0
+ */
+
+%define {
+    select 'PersistentConfiguration.Service' {
+        /**
+         * List of registered Schema
+         *
+         * @version 1.0
+         */
+        %persistent object Schema[] {
+            /**
+             * A unique key used to reference this instance.
+             *
+             * @version 1.0
+             */
+            %persistent %unique %key string Alias;
+            /**
+             * Name of the schema
+             *
+             * @version 1.0
+             */
+            %persistent string Name="";
+        }
+    }
+}

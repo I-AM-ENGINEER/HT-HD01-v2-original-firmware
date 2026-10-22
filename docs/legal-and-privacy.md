@@ -39,7 +39,7 @@ contain, among other things:
 If you restore the stock image, change the passwords and regenerate the SSH
 host keys.
 
-The `unpacked/` tree is sanitized (see `sanitization.md`) and is not a
+The `rootfs/` tree is sanitized (see `sanitization.md`) and is not a
 bootable image. It is provided for reading and analysis only.
 
 ## Privacy

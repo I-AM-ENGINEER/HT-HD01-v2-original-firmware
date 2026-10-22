@@ -1,0 +1,14 @@
+Package: libmicrohttpd-ssl
+Version: 0.9.76-1
+Depends: libc, libgcrypt, libgnutls, libgpg-error
+Provides: libmicrohttpd
+Source: feeds/morse/libs/libmicrohttpd
+SourceName: libmicrohttpd-ssl
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+Section: libs
+SourceDateEpoch: 1740893669
+Maintainer: Alexander Couzens <lynxis@fe80.eu>
+Architecture: mipsel_24kc
+Installed-Size: 59499
+Description:  GNU libmicrohttpd is a library that runs an HTTP server. with SSL support

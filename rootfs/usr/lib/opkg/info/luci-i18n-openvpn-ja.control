@@ -1,0 +1,11 @@
+Package: luci-i18n-openvpn-ja
+Version: git-24.263.65787-ea35194
+Depends: libc, luci-app-openvpn
+Source: feeds/luci/applications/luci-app-openvpn
+SourceName: luci-i18n-openvpn-ja
+License: Apache-2.0
+Section: luci
+SourceDateEpoch: 1732601432
+Architecture: all
+Installed-Size: 1808
+Description:  Translation for luci-app-openvpn - 日本語 (Japanese)

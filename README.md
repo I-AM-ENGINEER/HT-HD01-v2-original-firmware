@@ -25,7 +25,7 @@ the board.
 | 2.4 GHz | integrated MT7628 WMAC (`mt76` / `mt7603e` driver) |
 | Ethernet | 1× RJ45 10/100 via the MT7628 internal switch |
 | USB | USB-C (power; data role to be confirmed) |
-| Console | UART0, 115200 8N1 — accessible as **COM49** on the test PC |
+| Console | UART0, 115200 8N1 (USB-TTL; host port varies) |
 | Bootloader | Ralink/MediaTek **U-Boot 1.1.3** |
 | Firmware | OpenWrt **23.05.5**, vendor build `r0+24271-bc42a5ccf5` |
 | Default OS | Linux **5.15.167**, squashfs + jffs2 overlay |
@@ -35,7 +35,8 @@ the board.
 ```
 .
 ├── dumps/                 full flash dumps + full 32 MB image + SHA256SUMS
-├── unpacked/              sanitized rootfs archive, configs, init.d, DTS
+├── rootfs/                unpacked sanitized rootfs tree
+├── unpacked/              analysis extras: live configs, DTS, package list, dmesg
 ├── bootloader/            U-Boot analysis and menu strings
 ├── vendor/                vendor DTS files and source links
 ├── docs/                  hardware, boot, recovery, porting, legal notes
@@ -52,7 +53,7 @@ cd dumps && sha256sum -c SHA256SUMS.txt
 unsquashfs -d rootfs ../dumps/mtd5-rootfs.bin
 
 # 3. Read the sanitized extraction without unpacking
-tar -tzf unpacked/rootfs.tar.gz | less
+ls rootfs/
 ```
 
 For the UART/TFTP test procedure see [`docs/uart-console.md`](docs/uart-console.md)
@@ -83,7 +84,7 @@ and [`docs/recovery.md`](docs/recovery.md).
 The raw dumps are **byte-for-byte vendor firmware** and contain device-unique
 material: dropbear host keys, DPP keys, password hashes and factory MAC data.
 Do not deploy the dumps on another device and do not expose a device running
-the stock image to an untrusted network. The `unpacked/` tree is sanitized and
+the stock image to an untrusted network. The `rootfs/` tree is sanitized and
 is **not bootable**; read [`docs/sanitization.md`](docs/sanitization.md).
 
 Flashing without UART recovery can brick the board: the stock U-Boot has no

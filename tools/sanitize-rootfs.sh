@@ -36,13 +36,9 @@ while read -r f; do
 		"$f"
 done
 
-mkdir -p "$REPO/unpacked/configs"
-cp -a etc/config/. "$REPO/unpacked/configs/"
-rm -rf "$REPO/unpacked/init.d"
-mkdir -p "$REPO/unpacked/init.d"
-cp -a etc/init.d/. "$REPO/unpacked/init.d/"
-
-tar -czf "$REPO/unpacked/rootfs.tar.gz" .
+rm -rf "$REPO/rootfs"
+mkdir -p "$REPO/rootfs"
+cp -a "$TMP/." "$REPO/rootfs/"
 find . -printf '%M %u %g %s %p -> %l\n' > "$REPO/unpacked/rootfs-tree.txt"
 
 # Sanitize the live UCI configs fetched separately from the running device.
@@ -57,4 +53,4 @@ if [ -d "$REPO/unpacked/live-configs" ]; then
 	done
 fi
 
-echo "sanitized rootfs written to $REPO/unpacked/rootfs.tar.gz"
+echo "sanitized rootfs written to $REPO/rootfs"

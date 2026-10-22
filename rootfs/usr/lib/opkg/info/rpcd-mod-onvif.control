@@ -1,0 +1,11 @@
+Package: rpcd-mod-onvif
+Version: 1.0.4-1
+Depends: libc, rpcd, libubox20230523, libubus20230605, libopenssl3, zlib
+Source: feeds/morse/multimedia/rpcd-mod-onvif
+SourceName: rpcd-mod-onvif
+License: GPL-2.0
+Section: multimedia
+SourceDateEpoch: 1728015456
+Architecture: mipsel_24kc
+Installed-Size: 362284
+Description:  Communication with with ONVIF devices via ubus.

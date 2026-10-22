@@ -1,0 +1,15 @@
+Package: libgcc1
+Version: 12.3.0-4
+Provides: libgcc
+Source: feeds/base/libs/toolchain
+SourceName: libgcc
+License: GPL-3.0-with-GCC-exception
+Section: libs
+SourceDateEpoch: 1732552868
+ABIVersion: 1
+Status: unknown hold not-installed
+Essential: yes
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Architecture: mipsel_24kc
+Installed-Size: 35098
+Description:  GCC support library

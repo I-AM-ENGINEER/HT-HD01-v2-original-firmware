@@ -42,7 +42,7 @@ The full list is `unpacked/package-list.txt`.
   BCF `bcf_HD01_v2.bin`; AP with SAE, SSID/key redacted in the public tree.
 
 Live, sanitized UCI files are in `unpacked/live-configs/`. Static factory
-defaults are in `unpacked/configs/`.
+defaults are in `rootfs/etc/config/`.
 
 ## Services
 

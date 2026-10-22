@@ -1,0 +1,11 @@
+Package: luci-i18n-camera-ja
+Version: git-24.278.15456-ec2a198
+Depends: libc, luci-app-camera
+Source: feeds/morse/luci/luci-app-camera
+SourceName: luci-i18n-camera-ja
+License: Apache-2.0
+Section: luci
+SourceDateEpoch: 1740910061
+Architecture: all
+Installed-Size: 1908
+Description:  Translation for luci-app-camera - 日本語 (Japanese)

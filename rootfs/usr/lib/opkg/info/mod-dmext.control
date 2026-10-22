@@ -1,0 +1,13 @@
+Package: mod-dmext
+Version: v0.6.0-1
+Depends: libc, libamxc, libamxd, libamxb
+Source: feeds/prpl/network/mods/mod-dmext
+SourceName: mod-dmext
+License: BSD-2-Clause-Patent
+LicenseFiles: LICENSE
+Section: opt
+SourceDateEpoch: 1707916040
+Maintainer: Soft At Home <support.opensource@softathome.com>
+Architecture: mipsel_24kc
+Installed-Size: 8175
+Description:  Data model extension module

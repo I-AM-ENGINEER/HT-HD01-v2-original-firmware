@@ -1,0 +1,12 @@
+Package: luci-app-ekhwizards
+Version: git-25.174.10932-453971c
+Depends: libc, luci-base, luci-app-morseconfig
+Source: feeds/morse/luci/luci-app-ekhwizards
+SourceName: luci-app-ekhwizards
+License: Apache-2.0
+Section: luci
+SourceDateEpoch: 1750647732
+Maintainer: OpenWrt LuCI community
+Architecture: all
+Installed-Size: 28552
+Description:  LuCI Wizards for HaLow evaluation kits

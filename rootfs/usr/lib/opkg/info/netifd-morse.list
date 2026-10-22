@@ -1,0 +1,10 @@
+/lib/netifd/morse/wpa_s1g_dpp_action.sh
+/usr/share/rpcd/ucode/dpp
+/etc/hotplug.d/ieee80211/01-remove-auto-vif
+/lib/netifd/morse/morse_utils.sh
+/lib/wifi/morse.sh
+/lib/netifd/wireless/morse.sh
+/etc/uci-defaults/99-migrate-beacon-int-config
+/etc/uci-defaults/99-bcf-defaults
+/etc/uci-defaults/99-23.05-reconf
+/lib/netifd/morse/morse_overrides.sh

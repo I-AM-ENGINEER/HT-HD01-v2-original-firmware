@@ -1,0 +1,5 @@
+/etc/dppd/server.key
+/etc/dppd/auth_secrets.txt
+/etc/dppd/key.pem
+/etc/dppd/ppkey.pem
+/etc/dppd/server.pem

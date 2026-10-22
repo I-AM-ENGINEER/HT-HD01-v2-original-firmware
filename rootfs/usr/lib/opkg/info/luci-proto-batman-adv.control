@@ -1,0 +1,11 @@
+Package: luci-proto-batman-adv
+Version: git-24.331.21575-223674d
+Depends: libc, kmod-batman-adv
+Source: feeds/luci/protocols/luci-proto-batman-adv
+SourceName: luci-proto-batman-adv
+Section: luci
+SourceDateEpoch: 1732600775
+Maintainer: OpenWrt LuCI community
+Architecture: all
+Installed-Size: 2522
+Description:  Support for the batman-adv protocol

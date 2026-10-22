@@ -1,0 +1,11 @@
+Package: smart_manager
+Version: rel_1_15_3_2025_Apr_16-1
+Depends: libc, kmod-morse, libnl200, libpthread, libconfig11, hostapd_s1g
+Source: feeds/morse/utils/smart-manager
+SourceName: smart_manager
+Section: net
+Require-User: network=101:network=101
+SourceDateEpoch: 1750609046
+Architecture: mipsel_24kc
+Installed-Size: 51642
+Description:  Morse Micro HaLow DCS Smart Manager

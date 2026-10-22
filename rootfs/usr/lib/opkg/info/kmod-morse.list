@@ -1,0 +1,4 @@
+/lib/modules/5.15.167/morse.ko
+/etc/modules.d/morse
+/lib/modules/5.15.167/dot11ah.ko
+/etc/hotplug.d/usb/10-morse-usb-device

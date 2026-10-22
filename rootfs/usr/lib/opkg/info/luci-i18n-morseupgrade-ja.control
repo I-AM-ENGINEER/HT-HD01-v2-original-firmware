@@ -1,0 +1,11 @@
+Package: luci-i18n-morseupgrade-ja
+Version: git-25.061.36461-2063d0e
+Depends: libc, luci-app-morseupgrade
+Source: feeds/morse/luci/luci-app-morseupgrade
+SourceName: luci-i18n-morseupgrade-ja
+License: Apache-2.0
+Section: luci
+SourceDateEpoch: 1750356903
+Architecture: all
+Installed-Size: 2173
+Description:  Translation for luci-app-morseupgrade - 日本語 (Japanese)

@@ -1,0 +1,16 @@
+Package: libgst1controller
+Version: 1.20.5-1
+Depends: libc, libgstreamer1
+Source: feeds/packages/multimedia/gstreamer1
+SourceName: libgst1controller
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+Section: multimedia
+SourceDateEpoch: 1677379420
+CPE-ID: cpe:/a:gstreamer_project:gstreamer
+Maintainer: W. Michael Petullo <mike@flyn.org> Ted Hess <thess@kitschensync.net>
+Architecture: mipsel_24kc
+Installed-Size: 20022
+Description:  GStreamer open source multimedia framework
+ .
+ This package contains the GStreamer dynamic parameter control library.

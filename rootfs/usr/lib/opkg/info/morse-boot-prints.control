@@ -1,0 +1,11 @@
+Package: morse-boot-prints
+Version: 2
+Depends: libc, morse-mode
+Source: feeds/morse/utils/morse-boot-prints
+SourceName: morse-boot-prints
+Section: Utilities
+SourceDateEpoch: 1750596515
+Maintainer: Morse Micro
+Architecture: mipsel_24kc
+Installed-Size: 2356
+Description:  Morse Boot Info Prints

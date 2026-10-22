@@ -1,0 +1,11 @@
+Package: luci-i18n-morseconfig-ja
+Version: git-25.174.10932-afb5990
+Depends: libc, luci-app-morseconfig
+Source: feeds/morse/luci/luci-app-morseconfig
+SourceName: luci-i18n-morseconfig-ja
+License: Apache-2.0
+Section: luci
+SourceDateEpoch: 1750647732
+Architecture: all
+Installed-Size: 8684
+Description:  Translation for luci-app-morseconfig - 日本語 (Japanese)

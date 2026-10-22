@@ -1,0 +1,9 @@
+/usr/share/luci/menu.d/luci-app-rangetest.json
+/usr/share/rpcd/ucode/rangetest
+/www/luci-static/resources/view/rangetest/rangetest.js
+/www/luci-static/resources/view/rangetest/css/rangetest.css
+/www/luci-static/resources/tools/morse/rangetest/remote.js
+/www/luci-static/resources/tools/morse/rangetest/progressbar.js
+/etc/uci-defaults/52_luci-app-rangetest
+/usr/libexec/rpcd/rangetest-remote-rpc
+/usr/share/rpcd/acl.d/luci-app-rangetest.json

@@ -1,0 +1,12 @@
+Package: netifd-morse
+Version: 1
+Depends: libc, netifd, kmod-morse, kmod-cfg80211, morse-regdb, wpa_event_listener, wpa_supplicant_s1g, hostapd_s1g, morsecli
+Source: feeds/morse/netifd-morse
+SourceName: netifd-morse
+License: GPLv2
+Section: net
+SourceDateEpoch: 1750647732
+Maintainer: Morse Micro <info@morsemicro.com>
+Architecture: mipsel_24kc
+Installed-Size: 27262
+Description:  Morse Micro HaLow support for netifd

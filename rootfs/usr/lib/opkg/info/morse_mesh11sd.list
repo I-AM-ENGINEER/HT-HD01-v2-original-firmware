@@ -1,0 +1,3 @@
+/etc/init.d/mesh11sd
+/etc/config/mesh11sd
+/usr/sbin/mesh11sd

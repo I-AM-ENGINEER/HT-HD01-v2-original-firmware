@@ -40,7 +40,7 @@ by the running system:
   the PCB also carries the SR9900 USB Ethernet controller; the data role is an
   open question.
 - **UART0**: 115200 8N1, SoC pins **GPIO12 = UART_TXD0**, **GPIO13 =
-  UART_RXD0**, GND. On the test PC it enumerates as **COM49** through a 3.3 V
+  UART_RXD0**, GND. It enumerates as a USB serial port on the host through a 3.3 V
   USB-TTL adapter. This is the U-Boot console.
 - **Antenna**: SMA female (HaLow). The 2.4 GHz antenna is internal/PCB.
 - **Reset**: button/pin for factory reset (hold ~10 s). The live device tree

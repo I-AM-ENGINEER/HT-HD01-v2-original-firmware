@@ -1,0 +1,38 @@
+#!/bin/sh
+# This is based on the openwrt rc.button/reset script
+
+. /etc/diag.sh
+
+case "$ACTION" in
+pressed)
+	return 5
+;;
+timeout)
+	if [ "$SEEN" -ge 10 ]
+	then
+		set_state factory_reset
+		return 0
+	elif [ "$SEEN" -ge 5 ]
+	then
+		set_state rebooting
+		return 5
+	fi
+;;
+released)
+	if [ "$SEEN" -lt 2 ]
+	then
+		ubus call dpp push_button
+	elif [ "$SEEN" -ge 10 ]
+	then
+		logger -t button -p daemon.notice "factory resetting due to button press"
+		jffs2reset -y && reboot
+	elif [ "$SEEN" -ge 5 ]
+	then
+		logger -t button -p daemon.notice "rebooting due to button press"
+		sync
+		reboot
+	fi
+;;
+esac
+
+return 0

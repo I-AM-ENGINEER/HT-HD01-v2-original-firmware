@@ -1,0 +1,11 @@
+Package: luci-lib-httpclient
+Version: git-20.201.65662-8b8d83e
+Depends: libc, luci-lib-base, luci-lib-nixio, luci-lib-httpprotoutils, luci-lua-runtime
+Source: feeds/luci/libs/luci-lib-httpclient
+SourceName: luci-lib-httpclient
+Section: luci
+SourceDateEpoch: 1595182462
+Maintainer: OpenWrt LuCI community
+Architecture: all
+Installed-Size: 5070
+Description:  HTTP(S) client library

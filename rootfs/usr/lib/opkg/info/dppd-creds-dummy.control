@@ -1,0 +1,12 @@
+Package: dppd-creds-dummy
+Version: 1
+Depends: libc
+Provides: dppd-creds
+Source: feeds/morse/utils/dppd-creds-dummy
+SourceName: dppd-creds-dummy
+Section: Utilities
+SourceDateEpoch: 1740893669
+Maintainer: The Customer
+Architecture: mipsel_24kc
+Installed-Size: 4345
+Description:  Generates the needed credentials for dpp daemon.

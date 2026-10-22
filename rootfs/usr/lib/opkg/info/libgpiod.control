@@ -1,0 +1,14 @@
+Package: libgpiod
+Version: 1.6.4-1
+Depends: libc
+Source: feeds/packages/libs/libgpiod
+SourceName: libgpiod
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+Section: libs
+SourceDateEpoch: 1678482093
+Maintainer: Michael Heimpold <mhei@heimpold.de>
+Architecture: mipsel_24kc
+Installed-Size: 8912
+Description:  C library for interacting with the linux GPIO character device
+ (gpiod stands for GPIO device).

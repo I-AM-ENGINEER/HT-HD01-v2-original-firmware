@@ -1,0 +1,2 @@
+'use strict';'require network';'require baseclass';async function getMorseDeviceInterface(){const devices=await network.getDevices();const morseDevice=devices.find(d=>d.getWifiNetwork()&&d.getWifiNetwork().ubus('dev','iwinfo','hwmodes')?.includes('ah'));return morseDevice?.device;}
+return baseclass.extend({getMorseDeviceInterface,});

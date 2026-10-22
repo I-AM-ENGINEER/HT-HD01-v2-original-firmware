@@ -1,0 +1,11 @@
+Package: luci-i18n-morseui-ja
+Version: git-25.061.42164-efe3b79
+Depends: libc, luci-lib-morseui
+Source: feeds/morse/luci/luci-lib-morseui
+SourceName: luci-i18n-morseui-ja
+License: Apache-2.0
+Section: luci
+SourceDateEpoch: 1750647732
+Architecture: all
+Installed-Size: 943
+Description:  Translation for luci-lib-morseui - 日本語 (Japanese)

@@ -1,0 +1,12 @@
+Package: luci-app-camera
+Version: git-25.061.36461-3cd9a3c
+Depends: libc, rpcd-mod-onvif, luci-lib-httpclient, mediamtx
+Source: feeds/morse/luci/luci-app-camera
+SourceName: luci-app-camera
+License: Apache-2.0
+Section: luci
+SourceDateEpoch: 1740910061
+Maintainer: OpenWrt LuCI community
+Architecture: all
+Installed-Size: 77390
+Description:  LuCI Camera Viewer

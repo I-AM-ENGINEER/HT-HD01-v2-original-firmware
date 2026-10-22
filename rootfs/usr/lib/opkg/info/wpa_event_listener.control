@@ -1,0 +1,11 @@
+Package: wpa_event_listener
+Version: 1
+Depends: libc, wpa_supplicant_s1g, libwpa_client_s1g
+Source: feeds/morse/utils/wpa_event_listener
+SourceName: wpa_event_listener
+Section: utils
+SourceDateEpoch: 1750647732
+Maintainer: Morse Micro
+Architecture: mipsel_24kc
+Installed-Size: 4001
+Description:  A Daemon to listen to wpa supplicant s1g events.

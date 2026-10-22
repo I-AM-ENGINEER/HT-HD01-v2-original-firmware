@@ -1,0 +1,12 @@
+Package: relayd
+Version: 2023-01-28-f646ba40-1
+Depends: libc, libubox20230523
+Source: feeds/base/network/services/relayd
+SourceName: relayd
+License: GPL-2.0
+Section: net
+SourceDateEpoch: 1674933862
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Architecture: mipsel_24kc
+Installed-Size: 9017
+Description:  Transparent routing / relay daemon

@@ -1,0 +1,9 @@
+#!/bin/sh
+freq=$1
+bw=$2
+msc=$3
+morsectrl  rpg stop
+morsectrl  channel -c $freq -o $bw -p $bw -n 0
+morsectrl  txrate enable -m $msc -b $bw
+morsectrl  txscaler -p $4
+morsectrl  rpg start -c -1 -s 100

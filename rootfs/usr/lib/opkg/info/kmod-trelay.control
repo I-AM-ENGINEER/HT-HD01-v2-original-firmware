@@ -1,0 +1,14 @@
+Package: kmod-trelay
+Version: 5.15.167-2
+Depends: kernel (=5.15.167-1-d64df495c443d618315d239be9783145)
+Source: feeds/base/kernel/trelay
+SourceName: kmod-trelay
+Section: kernel
+SourceDateEpoch: 1594830836
+Architecture: mipsel_24kc
+Installed-Size: 3385
+Description:  trelay relays ethernet packets between two devices (similar to a bridge), but
+ without any MAC address checks. This makes it possible to bridge client mode
+ or ad-hoc mode wifi devices to ethernet VLANs, assuming the remote end uses
+ the same source MAC address as the device that packets are supposed to exit
+ from.

@@ -1,0 +1,15 @@
+Package: libnl-cli200
+Version: 3.7.0-1
+Depends: libc, libnl-genl200, libnl-nf200
+Provides: libnl-cli
+Source: feeds/base/libs/libnl
+SourceName: libnl-cli
+License: LGPL-2.1
+LicenseFiles: COPYING
+Section: libs
+SourceDateEpoch: 1699183367
+ABIVersion: 200
+CPE-ID: cpe:/a:libnl_project:libnl
+Architecture: mipsel_24kc
+Installed-Size: 10198
+Description:  CLI Netlink Library Functions

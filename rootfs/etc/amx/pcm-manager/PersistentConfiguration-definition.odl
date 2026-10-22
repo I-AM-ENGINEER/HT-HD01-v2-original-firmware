@@ -1,0 +1,204 @@
+/**
+ * Persistent Configuration Manager datamodel
+ *
+ * @version 1.0
+ */
+
+%define {
+    %persistent object 'PersistentConfiguration' {
+
+       %protected %read-only csv_string SupportedControllers = "mod-pcm-json,mod-pcm-xml";
+
+       %protected string Controller = "mod-pcm-json" {
+            on action validate call check_is_empty_or_in "PersistentConfiguration.SupportedControllers";
+       }
+
+      /**
+       * Global enable flag for the backup/restore service.
+       *
+       * @version 1.0
+       */
+       %persistent bool Enable = true;
+
+      /**
+       * Indicates the status of the backup/restore service.
+       * Enumeration of:
+       * - Disabled
+       * - Enabled
+       * - Error
+       *
+       * @version 1.0
+       */
+       %read-only string Status {
+           on action validate call check_enum ["Disabled", "Enabled", "Error"];
+           default "Enabled";
+       }
+
+      /**
+       * Detailed Error parameter, set to None if no error occurred.
+       *
+       * @version 1.0
+       */
+       %read-only string Error = "None";
+
+      /**
+       * Import PersistentConfigurations's own configuration
+       *
+       * @version 1.0
+       */
+       void Import(%in %mandatory htable content);
+
+      /**
+       * Backup all upgrade persistent configuration from the gateway.
+       * @param usersetting select upc or usersetting data to be backed up
+       * @param tag of the backup file.Mandatory for usersetting backup files [Manual, Dynamic] 
+       * @return void
+       * @version 1.0
+       */
+       void Backup(bool usersetting, string tag);
+
+      /**
+       * Restore the upgrade persistent configuration.
+       * @param FileRef is a reference (Alias) to the BackupFile instance, NULL for the upc userflag 
+       * @return void
+       * @version 1.0
+       */
+       void Restore(string FileRef);
+
+      /**
+       * Register a new service to PCM.
+       * @param name unique name of the service.
+       * @param data registration data
+       * 
+       * @error service already registered, invalid parameter,
+       * @return htable
+       *
+       * @version 1.0
+       */
+       htable registerSvc(%in %mandatory string name,%in %mandatory variant data);
+
+      /**
+       * Unregister an existing service to PCM
+       * @param name unique name of the service.
+       *
+       * @error service was not registered, invalid parameter,
+       * @return void
+       */
+       void unregisterSvc(%in %mandatory string name);
+
+
+       /**
+        * Register service configuration change notification
+        * Parameters
+        * - name: unique name of the service
+        *
+        * @version 1.0
+        */
+        void ServiceConfigurationChanged(%in %mandatory string name);
+
+        /**
+        * Latest Restore status.
+        * @version 1.0
+        */
+        %persistent %read-only string RestoreStatus {
+            on action validate call check_enum ["None", "Success", "PartialSuccess", "Error", "OnGoing"];
+            default "None";
+        }
+
+        /**
+        * Latest Backup status.
+        * @version 1.0
+        */
+        %persistent %read-only string BackupStatus {
+            on action validate call check_enum ["None", "Success", "PartialSuccess", "Error", "OnGoing"];
+            default "None";
+        }
+
+        /**
+        * Maximum number of the usersetting backup files tagged as 'Dynamic'
+        *
+        * @version 1.0
+        */
+        %persistent uint32 MaxNumberOfDynamicFiles = 6;
+
+        /**
+        * Number of the usersetting backup files with 'Dynamic' tag
+        *
+        * @version 1.0
+        */
+        %read-only uint32 NumberOfDynamicFiles = 0;
+
+        /**
+        * Adds a new backup file to the BackupFile template object.
+        * @param FileName will be expanded with the date prefix.
+        * @param Tag defines the type of the backup file ["Dynamic", "Manual", "Upload"].
+        * @return htable
+        *
+        * @version 1.0
+        */
+        htable AddBackupFile(%in %mandatory string FileName, %in %mandatory string Tag);
+
+        /**
+         * List of usersetting backup files.
+         *
+         * @version 1.0
+         */
+         object BackupFile[] {
+            /**
+             * Unique name of the service.
+             *
+             * @version 1.0
+             */
+             %unique %key string Alias {
+                on action validate call check_maximum_length 64;
+            }
+
+            /**
+             * Latest Backup status.
+             * @version 1.0
+             */
+            %read-only string Tag {
+                on action validate call check_enum ["Dynamic", "Manual", "Upload"];
+                default "Manual";
+            }
+
+            /**
+             * Name of the backup file. 
+             *
+             * @version 1.0
+             */
+            %read-only string FileName = "" {
+                on action validate call check_maximum_length 256;
+            }
+
+            /**
+            * Time at which the Backup file was created
+            *
+            * @version 1.0
+            * - unknown set to 0001-01-01T00:00:00Z
+            * - infinite must be 9999-12-31T23:59:59Z
+            */
+            %read-only datetime CreationDate = "0001-01-01T00:00:00Z";
+        }
+    }
+}
+
+include "PersistentConfiguration-service.odl";
+include "PersistentConfiguration-config.odl";
+
+%populate {
+    on event "dm:object-changed" call pcm_backup_file_type_changed
+        filter 'path == "PersistentConfiguration.Config." and
+        contains("parameters.BackupFileType")';
+    
+    on event "dm:object-changed" call max_number_dynamic_files_changed
+        filter 'path == "PersistentConfiguration." and
+        contains("parameters.MaxNumberOfDynamicFiles")';
+
+    on event "dm:instance-added" call backup_file_added
+        filter 'path matches "PersistentConfiguration\.BackupFile\.$"';
+
+    on event "dm:instance-removed" call backup_file_removed
+        filter 'path matches "PersistentConfiguration\.BackupFile\.$"';
+
+}

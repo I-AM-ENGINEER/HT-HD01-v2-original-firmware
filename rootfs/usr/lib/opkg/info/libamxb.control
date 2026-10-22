@@ -1,0 +1,13 @@
+Package: libamxb
+Version: v4.7.21-1
+Depends: libc, libamxc, libamxp, libamxd, uriparser
+Source: feeds/prpl/ambiorix/libs/libamxb
+SourceName: libamxb
+License: BSD-2-Clause-Patent
+LicenseFiles: LICENSE
+Section: opt
+SourceDateEpoch: 1707916071
+Maintainer: Soft At Home <support.opensource@softathome.com>
+Architecture: mipsel_24kc
+Installed-Size: 16735
+Description:  Bus agnostic C API (mediator)

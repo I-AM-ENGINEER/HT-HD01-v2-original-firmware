@@ -1,0 +1,5 @@
+/usr/lib/libcproducer.so
+/usr/lib/libKinesisVideoProducer.so
+/etc/config/aws_kvs
+/etc/init.d/aws_kvs
+/usr/lib/gstreamer-1.0/libgstkvssink.so

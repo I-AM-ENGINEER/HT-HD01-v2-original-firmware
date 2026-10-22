@@ -1,0 +1,12 @@
+Package: luci-app-rangetest
+Version: git-25.174.10932-f44fbdd
+Depends: libc, luci-base, umdns, luci-lib-httpclient, libiwinfo20250326, iperf3, uhttpd
+Source: feeds/morse/luci/luci-app-rangetest
+SourceName: luci-app-rangetest
+License: Apache-2.0
+Section: luci
+SourceDateEpoch: 1750647732
+Maintainer: OpenWrt LuCI community
+Architecture: all
+Installed-Size: 14142
+Description:  LuCI Range Testing Tool UI

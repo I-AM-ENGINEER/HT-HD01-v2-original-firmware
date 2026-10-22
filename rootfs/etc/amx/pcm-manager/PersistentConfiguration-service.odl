@@ -1,0 +1,97 @@
+/**
+ * Persistent Configuration Manager Service data model
+ *
+ * @version 1.0
+ */
+
+%define {
+    select 'PersistentConfiguration'{
+        /**
+         * List of services which have registered for backup/restore support.
+         *
+         * @version 1.0
+         */
+         %persistent object Service[] {
+            /**
+             * Unique name of the service.
+             *
+             * @version 1.0
+             */
+            %persistent %unique %key string Alias;
+
+            /**
+            * Unique Name of the service, must be the name of the Root object of the service
+            *
+            * @version V10.0
+            */
+            %persistent string Name;
+
+            /**
+             * Priority of the service, important for the order
+             * in which to import the configuration.
+             * The lower the order the higher the priority.
+             *
+             * @version 1.0
+             */
+            %persistent uint32 Order=0;
+
+            /**
+             * Function to be called on the service to import
+             * new data in the service.
+             *
+             * @version 1.0
+             */
+            string ImportCallback="Import";
+
+            /**
+             * Function to be called on the service to export
+             * new data in the service.
+             *
+             * @version 1.0
+             */
+            string ExportCallback="Export";
+
+            /**
+             * Latest import status.
+             * Status is used to trigger auto-import after Upgrade.
+             * @version 1.0
+             */
+             %persistent string ImportStatus {
+                 on action validate call check_enum ["None", "Success", "Error"];
+                 default "None";
+             }
+
+            /**
+             * Latest export status.
+             *
+             * @version 1.0
+             */
+             string ExportStatus {
+                 on action validate call check_enum ["None", "Success", "Error"];
+                 default "None";
+             }
+
+             /**
+              * Service status. Online when Register call was executed by service in current runtime session
+              *
+              * @version 1.0
+              */
+              string ServiceStatus {
+                  on action validate call check_enum ["Offline","Online"];
+                  default "Offline";
+              }
+
+             /**
+              * Changes the ImportStatus/ExportStatus of a specific service with the given value.
+              * @param ActionStatus ImportStatus or ExportStatus.
+              * @param State valid state of the specific action None, Success, Error.
+              * @return void
+              *
+              * @version 1.0
+              */
+              void SetActionStatus(%in %mandatory string ActionStatus, %in %mandatory string State);
+        }
+    }
+}
+
+include "PersistentConfiguration-schema.odl";

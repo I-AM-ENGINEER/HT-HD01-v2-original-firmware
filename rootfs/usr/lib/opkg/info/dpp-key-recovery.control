@@ -1,0 +1,11 @@
+Package: dpp-key-recovery
+Version: 1
+Depends: libc, persistent-vars-storage, openssl-util
+Source: feeds/morse/utils/dpp-key-recovery
+SourceName: dpp-key-recovery
+Section: Utilities
+SourceDateEpoch: 1740997554
+Maintainer: Morse Micro
+Architecture: mipsel_24kc
+Installed-Size: 812
+Description:  Recovers the DPP private key (or creates one if doesn't exist)

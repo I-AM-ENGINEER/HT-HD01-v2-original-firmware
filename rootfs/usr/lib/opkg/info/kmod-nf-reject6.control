@@ -1,0 +1,12 @@
+Package: kmod-nf-reject6
+Version: 5.15.167-1
+Depends: kernel (=5.15.167-1-d64df495c443d618315d239be9783145)
+Source: feeds/base/kernel/linux
+SourceName: kmod-nf-reject6
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Section: kernel
+SourceDateEpoch: 1741008457
+Architecture: mipsel_24kc
+Installed-Size: 3889
+Description:  Netfilter IPv6 reject support

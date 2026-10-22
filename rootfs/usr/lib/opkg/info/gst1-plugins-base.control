@@ -1,0 +1,14 @@
+Package: gst1-plugins-base
+Version: 1.20.5-1
+Depends: libc, libgstreamer1, libgst1allocators, libgst1app, libgst1audio, libgst1fft, libgst1pbutils, libgst1riff, libgst1rtp, libgst1rtsp, libgst1sdp, libgst1tag, libgst1video, gst1-mod-adder, gst1-mod-app, gst1-mod-audioconvert, gst1-mod-audiomixer, gst1-mod-audiorate, gst1-mod-audioresample, gst1-mod-audiotestsrc, gst1-mod-compositor, gst1-mod-encoding, gst1-mod-gio, gst1-mod-overlaycomposition, gst1-mod-pbtypes, gst1-mod-playback, gst1-mod-subparse, gst1-mod-rawparse, gst1-mod-tcp, gst1-mod-typefindfunctions, gst1-mod-videoconvert, gst1-mod-videorate, gst1-mod-videoscale, gst1-mod-videotestsrc, gst1-mod-volume, gst1-mod-alsa, gst1-mod-ivorbisdec, gst1-mod-ogg, gst1-mod-opus, gst1-mod-theora, gst1-mod-vorbis
+Source: feeds/packages/multimedia/gst1-plugins-base
+SourceName: gst1-plugins-base
+License: LGPL-2.1-or-later GPL-2.0-or-later
+LicenseFiles: COPYING.LIB COPYING
+Section: multimedia
+SourceDateEpoch: 1677379420
+CPE-ID: cpe:/a:gstreamer:gst-plugins-base
+Maintainer: W. Michael Petullo <mike@flyn.org> Ted Hess <thess@kitschensync.net>
+Architecture: mipsel_24kc
+Installed-Size: 96
+Description:  GStreamer plugins collection (base)

@@ -1,0 +1,13 @@
+Package: libamxj
+Version: v0.3.63-1
+Depends: libc, libamxc, yajl
+Source: feeds/prpl/ambiorix/libs/libamxj
+SourceName: libamxj
+License: BSD-2-Clause-Patent
+LicenseFiles: LICENSE
+Section: opt
+SourceDateEpoch: 1707916071
+Maintainer: Soft At Home <support.opensource@softathome.com>
+Architecture: mipsel_24kc
+Installed-Size: 5390
+Description:  JSON parser & generator using yajl and libamxc variants

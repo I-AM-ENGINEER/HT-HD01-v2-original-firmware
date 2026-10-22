@@ -1,0 +1,13 @@
+Package: libamxo
+Version: v4.2.6-1
+Depends: libc, libamxc, libamxp, libamxd, libamxs
+Source: feeds/prpl/ambiorix/libs/libamxo
+SourceName: libamxo
+License: BSD-2-Clause-Patent
+LicenseFiles: LICENSE
+Section: opt
+SourceDateEpoch: 1740893805
+Maintainer: Soft At Home <support.opensource@softathome.com>
+Architecture: mipsel_24kc
+Installed-Size: 40267
+Description:  Ambiorix Object Definition Language library

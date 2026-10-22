@@ -1,46 +1,20 @@
-# Unpacked stock firmware (sanitized)
+# Analysis extras
 
-This directory contains a **sanitized** extraction of the stock squashfs
-rootfs. It is for reading and analysis; it is **not a bootable image** and is
-not byte-identical to the device (secrets were removed).
+These files are analysis artifacts, not part of the rootfs tree.
 
 | Path | Contents |
 |---|---|
-| `rootfs.tar.gz` | sanitized full rootfs, symlinks preserved |
-| `configs/` | static factory UCI configs from `/etc/config` |
-| `live-configs/` | sanitized live configs read from the running device |
-| `init.d/` | init scripts from the factory rootfs |
 | `device-tree/` | `live.dts` (decompiled) and `live.dtb` |
+| `live-configs/` | sanitized live UCI configs from the running device |
 | `package-list.txt` | `opkg list-installed` (413 packages) |
-| `dmesg.txt` | sanitized boot log from the running device |
+| `dmesg.txt` | sanitized boot log |
 | `rootfs-tree.txt` | full file tree with permissions and symlink targets |
 
-## Extract
+The **unpacked sanitized rootfs** is in [`../rootfs/`](../rootfs/). It contains
+the vendor filesystem tree (`bin`, `etc`, `lib`, `usr`, `www`, ...), excluding
+device-unique keys and passwords.
 
-```bash
-tar -xzf rootfs.tar.gz -C rootfs
-```
+The raw squashfs is `../dumps/mtd5-rootfs.bin`; `unsquashfs` gives the complete
+**unsanitized** tree, including the original secrets. Handle that as sensitive.
 
-The raw squashfs is `../dumps/mtd5-rootfs.bin`; extract it with:
-
-```bash
-unsquashfs -d rootfs ../dumps/mtd5-rootfs.bin
-```
-
-That gives the **unsanitized** tree, including the original keys/passwords.
-Handle it as sensitive.
-
-## What was removed
-
-`etc/shadow`, `etc/dropbear/`, `etc/dppd/`, `etc/radius/`, `etc/ssl/private/`,
-`root/.ssh/`, `etc/config/rpcd`, stale `.bak` configs and VPN key material.
-MAC/hostname/default passphrase and UCI secrets were redacted. Full details:
-[`../docs/sanitization.md`](../docs/sanitization.md).
-
-## Useful entry points
-
-- `configs/` — vendor UCI defaults (network, wireless, system, firewall, …).
-- `live-configs/` — the state of the running device (sanitized).
-- `init.d/` — vendor and OpenWrt services.
-- `device-tree/live.dts` — the exact hardware description of this board.
-- `rootfs-tree.txt` — quick search for files without extracting the tarball.
+Sanitization details: [`../docs/sanitization.md`](../docs/sanitization.md).

@@ -1,0 +1,13 @@
+Package: libamxm
+Version: v0.0.62-1
+Depends: libc, libamxc, libamxp
+Source: feeds/prpl/ambiorix/libs/libamxm
+SourceName: libamxm
+License: BSD-2-Clause-Patent
+LicenseFiles: LICENSE
+Section: opt
+SourceDateEpoch: 1707916071
+Maintainer: Soft At Home <support.opensource@softathome.com>
+Architecture: mipsel_24kc
+Installed-Size: 3705
+Description:  modularity api, simplifies creation of add-ons (plug-ins, modules)

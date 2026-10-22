@@ -1,0 +1,13 @@
+Package: libamxrt
+Version: v0.3.4-2
+Depends: libc, libamxc, libamxj, libamxp, libamxd, libamxo, libamxb, libevent2-7, libcap-ng
+Source: feeds/prpl/ambiorix/libs/libamxrt
+SourceName: libamxrt
+License: BSD-2-Clause-Patent
+LicenseFiles: LICENSE
+Section: opt
+SourceDateEpoch: 1740893805
+Maintainer: Soft At Home <support.opensource@softathome.com>
+Architecture: mipsel_24kc
+Installed-Size: 17477
+Description:  Ambiorix Run Time API

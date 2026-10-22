@@ -9,14 +9,14 @@
   - **GND** → adapter GND
 - Do **not** connect the adapter's VCC; power the board from its own USB-C
   supply.
-- On the test PC the adapter enumerated as **COM49**.
+- The adapter enumerates as a USB serial port on the host.
 
 ## Terminal
 
-Windows (PuTTY/plink):
+Windows (PuTTY/plink; replace `COMx` with your port):
 
 ```powershell
-plink -serial COM49 -sercfg 115200,8,n,1
+plink -serial COMx -sercfg 115200,8,n,1
 ```
 
 Linux:
@@ -52,8 +52,8 @@ Put the test `uImage` in a directory and serve it over UDP/69:
 At the U-Boot prompts enter your LAN addresses, e.g.:
 
 ```
-Input device IP (10.10.10.123): 192.168.88.250
-Input server IP (10.10.10.3):   192.168.88.10
+Input device IP (10.10.10.123): 192.0.2.10
+Input server IP (10.10.10.3):   192.0.2.20
 Input Linux Kernel filename (uImage): uImage
 ```
 

@@ -303,7 +303,7 @@
 [  113.759041] 
 [  113.759041] eth0.1@eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
 [  113.759041]     link/ether 00:11:22:33:44:55 brd ff:ff:ff:ff:ff:ff
-[  113.759041]     inet 192.168.88.196/24 brd 192.168.88.255 scope global eth0.1
+[  113.759041]     inet 192.0.2.10/24 brd 192.0.2.255 scope global eth0.1
 [  115.773977] IPv6: ADDRCONF(NETDEV_CHANGE): wlan0: link becomes ready
 [  115.780723] br-ahwlan: port 1(wlan0) entered blocking state
 [  115.786473] br-ahwlan: port 1(wlan0) entered forwarding state

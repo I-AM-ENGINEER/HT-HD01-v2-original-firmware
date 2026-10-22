@@ -1,0 +1,16 @@
+Package: libnl200
+Version: 3.7.0-1
+Depends: libc, libnl-genl200, libnl-route200, libnl-nf200, libnl-cli200
+Provides: libnl
+Source: feeds/base/libs/libnl
+SourceName: libnl
+License: LGPL-2.1
+LicenseFiles: COPYING
+Section: libs
+SourceDateEpoch: 1699183367
+ABIVersion: 200
+CPE-ID: cpe:/a:libnl_project:libnl
+Architecture: mipsel_24kc
+Installed-Size: 96
+Description:  Socket handling, connection management, sending and receiving of data,
+ message construction and parsing, object caching system, etc.

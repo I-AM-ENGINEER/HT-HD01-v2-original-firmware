@@ -1,0 +1,13 @@
+Package: mod-amxb-ubus
+Version: v3.1.28-1
+Depends: libc, libamxc, libamxb, libamxd, ubus
+Source: feeds/prpl/ambiorix/mods/mod-amxb-ubus
+SourceName: mod-amxb-ubus
+License: BSD-2-Clause-Patent
+LicenseFiles: LICENSE
+Section: opt
+SourceDateEpoch: 1707916071
+Maintainer: Soft At Home <support.opensource@softathome.com>
+Architecture: mipsel_24kc
+Installed-Size: 26189
+Description:  Ubus Backend
