@@ -1,0 +1,16 @@
+#!/bin/sh /etc/rc.common
+#
+# Copyright (C) 2021-2022 Morse Micro Pty Ltd. All rights reserved.
+#
+
+# After boot for overlay mount, (and log).
+# Before wpad and network.
+START=15
+
+boot() {
+    . /lib/functions.sh
+    if [[ "$(board_name)" = morse,ekh04* ]]; then
+        return
+    fi
+    /sbin/antenna-select 2
+}

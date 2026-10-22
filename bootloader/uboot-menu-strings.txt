@@ -1,0 +1,45 @@
+# U-Boot 1.1.3 (Ralink/MediaTek) — ключевые строки из mtd0-u-boot.bin
+# Извлечено: strings -t x -n 4
+
+  1c8ec Firmware will be restore to first boot, all your data will lose.
+  1c930 Find rootfs_data address: 0x%x, erase len = 0x%x.
+  1c965 Currently I2CDAT/GPIO5 is low, set it to high to reset firmware.
+  1c9a9 Please choose the operation: 
+  1c9c8    %d: Load system code then write to Flash via Serial. 
+  1ca04    %d: Load system code to SDRAM via TFTP. 
+  1ca34    %d: Load system code then write to Flash via TFTP. 
+  1ca6c    %d: Boot system code via Flash (default).
+  1ca9c    %d: Entr boot command line interface.
+  1cac8    %d: Load system code then write to Flash via USB Storage.
+  1cb48    %d: Load Boot Loader code then write to Flash via TFTP. 
+  1cb88    r: Reset firmware to first boot. 
+  1cbe0 	Input device IP 
+  1cc04 	Input server IP 
+  1cc3c 	Input Uboot filename 
+  1cc54 uboot.bin
+  1cc78 	Input Linux Kernel filename 
+  1cc98 uImage
+  1cf90 3: System Boot system code via Flash.
+  1cfbc %d: System Load Linux to SDRAM via TFTP. 
+  1cfec %d: System Load Linux Kernel then write to Flash via TFTP. 
+  1d0c1 %d: System Load Boot Loader then write to Flash via Serial. 
+  1d144 %d: System Load UBoot to SDRAM via TFTP. 
+  1d178 %d: System Load Boot Loader then write to Flash via TFTP. 
+  1d245 %d: System Load Linux then write to Flash via Serial. 
+  1d281 %d: System Load Linux then write to Flash via USB Storage. 
+  1d2f0 root_uImage
+  1d328 System Boot Linux via Flash.
+  1d42c ## Warning: gatewayip needed but not set
+  1d6b0 gatewayip
+  1d6bc netmask
+  1d80d TFTP error: First block is not block 1 (%ld)
+  1d875 TFTP error: '%s' (%d)
+  1d904 TFTP from server 
+  1e74c bootdelay
+  1e758 bootcmd
+  1ef14 tftpboot
+  1ef20 tftpboot- boot image via network using TFTP protocol
+  212c0 bootcmd=tftp
+  212cd bootdelay=10
+  21306 ipaddr=10.10.10.123
+  2131a serverip=10.10.10.3

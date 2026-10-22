@@ -1,0 +1,4 @@
+*.bin binary
+*.dtb binary
+*.tar.gz binary
+*.pdf binary
