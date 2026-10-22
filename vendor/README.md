@@ -5,6 +5,7 @@
 | `links.md` | URLs and commit pins used during the investigation |
 | `morse-dts/morse-mt7628an_morse_ekh03.dtsi` | Morse Micro EKH03 shared DTSI |
 | `morse-dts/morse-mt7628an_morse_ekh03v4.dts` | Morse Micro EKH03 v4 board DTS |
+| `heltec/HT-HD01_datasheet.pdf` | Heltec HT-HD01 datasheet (vendor document, included for preservation) |
 
 The device is `morse,ekh03v3`. Morse Micro's current HEAD has the shared
 `ekh03.dtsi` and a v4 board file, but no explicit v3 DTS. Use the live tree in

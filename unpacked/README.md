@@ -12,6 +12,7 @@ not byte-identical to the device (secrets were removed).
 | `init.d/` | init scripts from the factory rootfs |
 | `device-tree/` | `live.dts` (decompiled) and `live.dtb` |
 | `package-list.txt` | `opkg list-installed` (413 packages) |
+| `dmesg.txt` | sanitized boot log from the running device |
 | `rootfs-tree.txt` | full file tree with permissions and symlink targets |
 
 ## Extract

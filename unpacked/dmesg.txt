@@ -1,0 +1,310 @@
+[    0.000000] Linux version 5.15.167 (halow-wifi@ubuntu) (mipsel-openwrt-linux-musl-gcc (OpenWrt GCC 12.3.0 r0+24271-bc42a5ccf5) 12.3.0, GNU ld (GNU Binutils) 2.40.0) #0 Mon Jun 23 03:11:26 2025
+[    0.000000] Board has DDR2
+[    0.000000] Analog PMU set to hw control
+[    0.000000] Digital PMU set to hw control
+[    0.000000] SoC Type: MediaTek MT7628AN ver:1 eco:2
+[    0.000000] printk: bootconsole [early0] enabled
+[    0.000000] CPU0 revision is: 00019655 (MIPS 24KEc)
+[    0.000000] MIPS: machine is Heltec HT-HD01-V2
+[    0.000000] Initrd not found or empty - disabling initrd
+[    0.000000] Primary instruction cache 64kB, VIPT, 4-way, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 4-way, PIPT, no aliases, linesize 32 bytes
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x0000000000000000-0x0000000007ffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000000000-0x0000000007ffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000000000-0x0000000007ffffff]
+[    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 32480
+[    0.000000] Kernel command line: console=ttyUSB0,115200 console=ttyS0,115200 rootfstype=squashfs,jffs2
+[    0.000000] Dentry cache hash table entries: 16384 (order: 4, 65536 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 8192 (order: 3, 32768 bytes, linear)
+[    0.000000] Writing ErrCtl register=0007e00f
+[    0.000000] Readback ErrCtl register=0007e00f
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] Memory: 118940K/131072K available (6313K kernel code, 617K rwdata, 1396K rodata, 1200K init, 220K bss, 12132K reserved, 0K cma-reserved)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] NR_IRQS: 256
+[    0.000000] intc: using register map from devicetree
+[    0.000000] CPU Clock: 580MHz
+[    0.000000] timer_probe: no matching timers found
+[    0.000000] clocksource: MIPS: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 6590553264 ns
+[    0.000002] sched_clock: 32 bits at 290MHz, resolution 3ns, wraps every 7405115902ns
+[    0.008011] Calibrating delay loop... 385.84 BogoMIPS (lpj=1929216)
+[    0.074216] pid_max: default: 32768 minimum: 301
+[    0.080055] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.087415] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.105178] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.115170] futex hash table entries: 256 (order: -1, 3072 bytes, linear)
+[    0.122254] pinctrl core: initialized pinctrl subsystem
+[    0.129789] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.136437] thermal_sys: Registered thermal governor 'step_wise'
+[    0.140808] rt2880-pinmux pinctrl: invalid group "pwm" for function "gpio"
+[    0.168206] printk: console [ramoops-1] enabled
+[    0.172738] pstore: Registered ramoops as persistent store backend
+[    0.179045] ramoops: using 0x100000@0x7efffff, ecc: 0
+[    0.194619] usbcore: registered new interface driver usbfs
+[    0.200279] usbcore: registered new interface driver hub
+[    0.205668] usbcore: registered new device driver usb
+[    0.212882] clocksource: Switched to clocksource MIPS
+[    0.219874] NET: Registered PF_INET protocol family
+[    0.225165] IP idents hash table entries: 2048 (order: 2, 16384 bytes, linear)
+[    0.233771] tcp_listen_portaddr_hash hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.242340] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.250177] TCP established hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.257918] TCP bind hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.265031] TCP: Hash tables configured (established 1024 bind 1024)
+[    0.271679] UDP hash table entries: 256 (order: 0, 4096 bytes, linear)
+[    0.278350] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes, linear)
+[    0.285899] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.291653] PCI: CLS 0 bytes, default 32
+[    0.300614] workingset: timestamp_bits=14 max_order=15 bucket_order=1
+[    0.314852] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.320736] jffs2: version 2.2 (NAND) (SUMMARY) (LZMA) (RTIME) (CMODE_PRIORITY) (c) 2001-2006 Red Hat, Inc.
+[    0.332763] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+[    0.344094] mt7621_gpio 10000600.gpio: registering 32 gpios
+[    0.350036] mt7621_gpio 10000600.gpio: registering 32 gpios
+[    0.356158] mt7621_gpio 10000600.gpio: registering 32 gpios
+[    0.362747] Serial: 8250/16550 driver, 16 ports, IRQ sharing enabled
+[    0.372822] printk: console [ttyS0] disabled
+[    0.377292] 10000c00.uartlite: ttyS0 at MMIO 0x10000c00 (irq = 28, base_baud = 2500000) is a 16550A
+[    0.386465] printk: console [ttyS0] enabled
+[    0.394880] printk: bootconsole [early0] disabled
+[    0.406560] spi-mt7621 10000b00.spi: sys_freq: 193333333
+[    0.438764] spi-nor spi0.0: w25q256 (32768 Kbytes)
+[    0.443826] 4 fixed-partitions partitions found on MTD device spi0.0
+[    0.450323] OF: Bad cell count for /palmbus@10000000/spi@b00/flash@0/partitions
+[    0.457811] OF: Bad cell count for /palmbus@10000000/spi@b00/flash@0/partitions
+[    0.465820] OF: Bad cell count for /palmbus@10000000/spi@b00/flash@0/partitions
+[    0.473368] OF: Bad cell count for /palmbus@10000000/spi@b00/flash@0/partitions
+[    0.481057] Creating 4 MTD partitions on "spi0.0":
+[    0.485985] 0x000000000000-0x000000030000 : "u-boot"
+[    0.495359] 0x000000030000-0x000000040000 : "u-boot-env"
+[    0.502250] 0x000000040000-0x000000050000 : "factory"
+[    0.510857] 0x000000050000-0x000002000000 : "firmware"
+[    0.517873] 2 uimage-fw partitions found on MTD device firmware
+[    0.524023] Creating 2 MTD partitions on "firmware":
+[    0.529076] 0x000000000000-0x00000027cc61 : "kernel"
+[    0.534133] mtd: partition "kernel" doesn't end on an erase/write block -- force read-only
+[    0.545971] 0x00000027cc61-0x000001fb0000 : "rootfs"
+[    0.551067] mtd: partition "rootfs" doesn't start on an erase/write block boundary -- force read-only
+[    0.561900] mtd: setting mtd5 (rootfs) as root device
+[    0.568359] 1 squashfs-split partitions found on MTD device rootfs
+[    0.574776] 0x000001cf0000-0x000001fb0000 : "rootfs_data"
+[    0.604109] rt3050-esw 10110000.esw: mediatek esw at 0xb0110000, irq 25 initialized
+[    0.623045] mtk_soc_eth 10100000.ethernet eth0: mediatek frame engine at 0xb0100000, irq 5
+[    0.632174] usbcore: registered new interface driver usbserial_generic
+[    0.638970] usbserial: USB Serial support registered for generic
+[    0.645188] usbcore: registered new interface driver cp210x
+[    0.650910] usbserial: USB Serial support registered for cp210x
+[    0.657024] usbcore: registered new interface driver ftdi_sio
+[    0.662950] usbserial: USB Serial support registered for FTDI USB Serial Device
+[    0.670440] usbcore: registered new interface driver pl2303
+[    0.676261] usbserial: USB Serial support registered for pl2303
+[    0.684957] NET: Registered PF_INET6 protocol family
+[    0.703189] Segment Routing with IPv6
+[    0.707096] In-situ OAM (IOAM) with IPv6
+[    0.711242] NET: Registered PF_PACKET protocol family
+[    0.716615] bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+[    0.730240] 8021q: 802.1Q VLAN Support v1.8
+[    0.736070] pstore: Using crash dump compression: deflate
+[    0.743957] clk: Disabling unused clocks
+[    0.760362] VFS: Mounted root (squashfs filesystem) readonly on device 31:5.
+[    0.774197] Freeing unused kernel image (initmem) memory: 1200K
+[    0.780226] This architecture does not have kernel memory protection.
+[    0.786802] Run /sbin/init as init process
+[    0.790960]   with arguments:
+[    0.790967]     /sbin/init
+[    0.790975]   with environment:
+[    0.790981]     HOME=/
+[    0.790987]     TERM=linux
+[    1.749671] init: Console is alive
+[    1.753986] init: - watchdog -
+[    4.550010] rt3050-esw 10110000.esw: port 0 link up
+[    5.367636] kmodloader: loading kernel modules from /etc/modules-boot.d/*
+[    5.516238] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    5.535917] SCSI subsystem initialized
+[    5.547954] fsl-ehci: Freescale EHCI Host controller driver
+[    5.557497] ehci-platform: EHCI generic platform driver
+[    5.573433] phy phy-10120000.usbphy.0: remote usb device wakeup disabled
+[    5.580272] phy phy-10120000.usbphy.0: UTMI 16bit 30MHz
+[    5.585590] ehci-platform 101c0000.ehci: EHCI Host Controller
+[    5.591461] ehci-platform 101c0000.ehci: new USB bus registered, assigned bus number 1
+[    5.599734] ehci-platform 101c0000.ehci: irq 26, io mem 0x101c0000
+[    5.632900] ehci-platform 101c0000.ehci: USB 2.0 started, EHCI 1.00
+[    5.640566] hub 1-0:1.0: USB hub found
+[    5.645504] hub 1-0:1.0: 1 port detected
+[    5.658721] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    5.667976] ohci-platform: OHCI generic platform driver
+[    5.673938] ohci-platform 101c1000.ohci: Generic Platform OHCI controller
+[    5.680918] ohci-platform 101c1000.ohci: new USB bus registered, assigned bus number 2
+[    5.689243] ohci-platform 101c1000.ohci: irq 26, io mem 0x101c1000
+[    5.768132] hub 2-0:1.0: USB hub found
+[    5.773029] hub 2-0:1.0: 1 port detected
+[    5.795654] sdhci: Secure Digital Host Controller Interface driver
+[    5.802016] sdhci: Copyright(c) Pierre Ossman
+[    5.808669] sdhci-pltfm: SDHCI platform and OF driver helper
+[    5.819629] usbcore: registered new interface driver usb-storage
+[    5.827486] kmodloader: done loading kernel modules from /etc/modules-boot.d/*
+[    5.845612] init: - preinit -
+[    7.908893] random: procd: uninitialized urandom read (4 bytes read)
+[   10.198035] jffs2: notice: (329) jffs2_build_xattr_subsystem: complete building xattr subsystem, 44 of xdatum (17 unchecked, 24 orphan) and 48 of xref (6 dead, 19 orphan) found.
+[   10.216924] mount_root: switching to jffs2 overlay
+[   10.229970] overlayfs: upper fs does not support tmpfile.
+[   10.245012] urandom-seed: Seeding with /etc/urandom.seed
+[   10.401028] procd: - early -
+[   10.404543] procd: - watchdog -
+[   11.107216] random: jshn: uninitialized urandom read (4 bytes read)
+[   11.260763] procd: - watchdog -
+[   11.353144] procd: - ubus -
+[   11.610792] random: ubusd: uninitialized urandom read (4 bytes read)
+[   11.634238] random: ubusd: uninitialized urandom read (4 bytes read)
+[   11.703817] procd: - init -
+[   12.408957] random: jshn: uninitialized urandom read (4 bytes read)
+[   12.490351] random: ubusd: uninitialized urandom read (4 bytes read)
+[   12.509664] random: ubus: uninitialized urandom read (4 bytes read)
+[   13.710161] random: jshn: uninitialized urandom read (4 bytes read)
+[   13.742014] random: ubusd: uninitialized urandom read (4 bytes read)
+[   13.753202] random: ubus: uninitialized urandom read (4 bytes read)
+[   14.351986] morsechipreset: unable to find sdio device/driver to unbind; proceeding anyway
+[   15.581113] kmodloader: loading kernel modules from /etc/modules.d/*
+[   16.242166] Loading modules backported from Linux version v6.1.110-0-g5f55cad62cc9d
+[   16.250060] Backport generated by backports.git v6.1.110-1-0-g965f73fc
+[   16.847019] mt76_wmac 10300000.wmac: ASIC revision: 76280001
+[   16.875538] mt76_wmac 10300000.wmac: Direct firmware load for mt7603e_txpat.bin failed with error -2
+[   16.884917] mt76_wmac 10300000.wmac: Falling back to sysfs fallback for: mt7603e_txpat.bin
+[   16.974138] mt76_wmac 10300000.wmac: No TX Power Adjust file (mt7603e_txpat.bin) found.
+[   17.003502] mt76_wmac 10300000.wmac: Firmware Version: 20151201
+[   17.009570] mt76_wmac 10300000.wmac: Build Time: 20151201183641
+[   17.062897] mt76_wmac 10300000.wmac: firmware init done
+[   17.230830] mt76_wmac 10300000.wmac: registering led 'mt76-phy0'
+[   17.239123] ieee80211 phy0: Selected rate control algorithm 'minstrel_ht'
+[   17.497879] tun: Universal TUN/TAP device driver, 1.6
+[   17.695728] i2c_dev: i2c /dev entries driver
+[   17.733462] GACT probability on
+[   17.754611] Mirror/redirect action on
+[   17.815510] u32 classifier
+[   17.818313]     input device check on
+[   17.822024]     Actions configured
+[   18.116989] mmc0: new high speed SDIO card at address 0001
+[   18.289933] usbcore: registered new interface driver cdc_acm
+[   18.295791] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+[   18.306256] urngd: v1.0.2 started.
+[   18.362916] Morse Micro Dot11ah driver registration. Version 0-rel_1_15_3_2025_Apr_16
+[   18.475177] morse micro driver registration. Version 0-rel_1_15_3_2025_Apr_16
+[   18.512742] morse_sdio mmc0:0001:2: morse_of_probe: Reading gpio pins configuration from device tree
+[   19.602829] morse_sdio mmc0:0001:2: Loaded firmware from morse/mm6108.bin, size 444304, crc32 0x1c6a0f92
+[   19.801308] morse_sdio mmc0:0001:2: Loaded BCF from morse/bcf_HD01_v2.bin, size 1197, crc32 0xa6b42f92
+[   20.644559] morse_sdio mmc0:0001:2: Driver loaded with kernel module parameters
+[   20.652033] morse_sdio mmc0:0001:2:     slow_clock_mode                         : 0
+[   20.659892] morse_sdio mmc0:0001:2:     enable_1mhz_probes                      : Y
+[   20.667684] morse_sdio mmc0:0001:2:     enable_sched_scan                       : Y
+[   20.675472] morse_sdio mmc0:0001:2:     enable_hw_scan                          : Y
+[   20.683270] morse_sdio mmc0:0001:2:     enable_pv1                              : N
+[   20.691047] morse_sdio mmc0:0001:2:     enable_page_slicing                     : N
+[   20.698868] morse_sdio mmc0:0001:2:     log_modparams_on_boot                   : Y
+[   20.706669] morse_sdio mmc0:0001:2:     enable_mcast_rate_control               : N
+[   20.714460] morse_sdio mmc0:0001:2:     enable_mcast_whitelist                  : Y
+[   20.722238] morse_sdio mmc0:0001:2:     ocs_type                                : 1
+[   20.730025] morse_sdio mmc0:0001:2:     enable_wiphy                            : 0
+[   20.737825] morse_sdio mmc0:0001:2:     enable_auto_mpsw                        : Y
+[   20.745615] morse_sdio mmc0:0001:2:     duty_cycle_probe_retry_threshold        : 2500
+[   20.753678] morse_sdio mmc0:0001:2:     duty_cycle_mode                         : 0
+[   20.761456] morse_sdio mmc0:0001:2:     enable_auto_duty_cycle                  : Y
+[   20.769245] morse_sdio mmc0:0001:2:     dhcpc_lease_update_script               : /morse/scripts/dhcpc_update.sh
+[   20.779588] morse_sdio mmc0:0001:2:     enable_ibss_probe_filtering             : Y
+[   20.787389] morse_sdio mmc0:0001:2:     enable_dhcpc_offload                    : N
+[   20.795185] morse_sdio mmc0:0001:2:     enable_arp_offload                      : N
+[   20.802976] morse_sdio mmc0:0001:2:     enable_bcn_change_seq_monitor           : 0
+[   20.810753] morse_sdio mmc0:0001:2:     enable_cac                              : 0
+[   20.818540] morse_sdio mmc0:0001:2:     max_mc_frames                           : 10
+[   20.826422] morse_sdio mmc0:0001:2:     tx_max_power_mbm                        : 2200
+[   20.834477] morse_sdio mmc0:0001:2:     enable_twt                              : Y
+[   20.842252] morse_sdio mmc0:0001:2:     enable_mac80211_connection_monitor      : N
+[   20.850038] morse_sdio mmc0:0001:2:     enable_airtime_fairness                 : N
+[   20.857825] morse_sdio mmc0:0001:2:     enable_raw                              : Y
+[   20.865614] morse_sdio mmc0:0001:2:     max_aggregation_count                   : 0
+[   20.873405] morse_sdio mmc0:0001:2:     max_rate_tries                          : 1
+[   20.881182] morse_sdio mmc0:0001:2:     max_rates                               : 4
+[   20.888967] morse_sdio mmc0:0001:2:     enable_watchdog_reset                   : N
+[   20.896759] morse_sdio mmc0:0001:2:     watchdog_interval_secs                  : 30
+[   20.904643] morse_sdio mmc0:0001:2:     enable_watchdog                         : Y
+[   20.912420] morse_sdio mmc0:0001:2:     country                                 : US
+[   20.920293] morse_sdio mmc0:0001:2:     enable_cts_to_self                      : N
+[   20.928079] morse_sdio mmc0:0001:2:     enable_rts_8mhz                         : N
+[   20.935871] morse_sdio mmc0:0001:2:     enable_trav_pilot                       : Y
+[   20.943663] morse_sdio mmc0:0001:2:     enable_sgi_rc                           : Y
+[   20.951438] morse_sdio mmc0:0001:2:     enable_mbssid_ie                        : N
+[   20.959225] morse_sdio mmc0:0001:2:     virtual_sta_max                         : 0
+[   20.967017] morse_sdio mmc0:0001:2:     thin_lmac                               : 0
+[   20.974808] morse_sdio mmc0:0001:2:     enable_dynamic_ps_offload               : Y
+[   20.982584] morse_sdio mmc0:0001:2:     enable_ps                               : 2
+[   20.990371] morse_sdio mmc0:0001:2:     enable_subbands                         : 2
+[   20.998173] morse_sdio mmc0:0001:2:     enable_survey                           : Y
+[   21.005966] morse_sdio mmc0:0001:2:     mcs10_mode                              : 0
+[   21.013765] morse_sdio mmc0:0001:2:     mcs_mask                                : 1023
+[   21.021805] morse_sdio mmc0:0001:2:     no_hwcrypt                              : 0
+[   21.029590] morse_sdio mmc0:0001:2:     enable_ext_xtal_init                    : N
+[   21.037383] morse_sdio mmc0:0001:2:     enable_otp_check                        : 1
+[   21.045172] morse_sdio mmc0:0001:2:     bcf                                     : bcf_HD01_v2.bin
+[   21.054194] morse_sdio mmc0:0001:2:     serial                                  : default
+[   21.062498] morse_sdio mmc0:0001:2:     debug_mask                              : 8
+[   21.070284] morse_sdio mmc0:0001:2:     tx_status_lifetime_ms                   : 15000
+[   21.078422] morse_sdio mmc0:0001:2:     tx_queued_lifetime_ms                   : 1000
+[   21.086477] morse_sdio mmc0:0001:2:     max_txq_len                             : 32
+[   21.094354] morse_sdio mmc0:0001:2:     default_cmd_timeout_ms                  : 600
+[   21.102307] morse_sdio mmc0:0001:2:     hw_reload_after_stop                    : 5
+[   21.110095] morse_sdio mmc0:0001:2:     enable_short_bcn_as_dtim_override       : -1
+[   21.117968] morse_sdio mmc0:0001:2:     fw_bin_file                             : 
+[   21.125676] morse_sdio mmc0:0001:2:     sdio_reset_time                         : 400
+[   21.133643] morse_sdio mmc0:0001:2:     macaddr_suffix                          : xx:xx:xx
+[   21.142037] morse_sdio mmc0:0001:2:     macaddr_octet                           : 255
+[   21.149997] morse_sdio mmc0:0001:2:     max_total_vendor_ie_bytes               : 514
+[   21.157960] morse_sdio mmc0:0001:2:     coredump_include                        : 1
+[   21.165750] morse_sdio mmc0:0001:2:     coredump_method                         : 1
+[   21.173540] morse_sdio mmc0:0001:2:     enable_coredump                         : Y
+[   21.181316] morse_sdio mmc0:0001:2:     sdio_clk_debugfs                        : 
+[   21.189013] morse_sdio mmc0:0001:2:     enable_mm_vendor_ie                     : Y
+[   21.196804] morse_sdio mmc0:0001:2:     fixed_guard                             : 0
+[   21.204600] morse_sdio mmc0:0001:2:     fixed_ss                                : 1
+[   21.212377] morse_sdio mmc0:0001:2:     fixed_bw                                : 2
+[   21.220163] morse_sdio mmc0:0001:2:     fixed_mcs                               : 4
+[   21.227948] morse_sdio mmc0:0001:2:     enable_fixed_rate                       : N
+[   22.993025] random: crng init done
+[   22.996530] random: 29 urandom warning(s) missed due to ratelimiting
+[   23.081851] uaccess char driver major number is 250
+[   23.087178] morse_io: Device node '/dev/morse_io' created successfully
+[   23.094170] usbcore: registered new interface driver morse_usb
+[   23.456320] xt_time: kernel timezone is -0000
+[   23.473366] batman_adv: B.A.T.M.A.N. advanced 2023.1-openwrt-7 (compatibility version 15) loaded
+[   23.485666] usbcore: registered new interface driver cdc_ether
+[   23.737245] PPP generic driver version 2.4.2
+[   23.754541] NET: Registered PF_PPPOX protocol family
+[   23.775497] usbcore: registered new interface driver rndis_host
+[   23.823564] kmodloader: done loading kernel modules from /etc/modules.d/*
+[   42.012260] rt3050-esw 10110000.esw: port 0 link down
+[   45.972670] rt3050-esw 10110000.esw: port 0 link up
+[  109.907009] br-ahwlan: port 1(wlan0) entered blocking state
+[  109.912722] br-ahwlan: port 1(wlan0) entered disabled state
+[  109.918907] device wlan0 entered promiscuous mode
+[  113.759041]     _                           ____       _       _   
+[  113.759041]    / \   ___ ___ ___  ___ ___  |  _ \ ___ (_)_ __ | |_ 
+[  113.759041]   / _ \ / __/ __/ _ \/ __/ __| | |_) / _ \| | '_ \| __|
+[  113.759041]  / ___ \ (_| (_|  __/\__ \__ \ |  __/ (_) | | | | | |_ 
+[  113.759041] /_/   \_\___\___\___||___/___/ |_|   \___/|_|_| |_|\__|
+[  113.759041]                                                        
+[  113.759041] SSID: HT-HD01-XXXX
+[  113.759041] Encryption: sae
+[  113.759041] Country: US
+[  113.759041] Channel: 3
+[  113.759041] Bandwidth: 1
+[  113.759041] 
+[  113.759041] eth0.1@eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+[  113.759041]     link/ether 00:11:22:33:44:55 brd ff:ff:ff:ff:ff:ff
+[  113.759041]     inet 192.168.88.196/24 brd 192.168.88.255 scope global eth0.1
+[  115.773977] IPv6: ADDRCONF(NETDEV_CHANGE): wlan0: link becomes ready
+[  115.780723] br-ahwlan: port 1(wlan0) entered blocking state
+[  115.786473] br-ahwlan: port 1(wlan0) entered forwarding state
+[  115.897958] IPv6: ADDRCONF(NETDEV_CHANGE): br-ahwlan: link becomes ready
